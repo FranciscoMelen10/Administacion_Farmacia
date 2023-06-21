@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Farmacia.Datos
 {
-    internal class Class1
+    internal class dt_medicamentos
     {
     }
 }

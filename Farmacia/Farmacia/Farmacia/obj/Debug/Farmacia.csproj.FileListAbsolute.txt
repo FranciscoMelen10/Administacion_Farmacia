@@ -14,7 +14,6 @@ D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\b
 D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\bin\Debug\Farmacia.pdb
 D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\obj\Debug\Farmacia.csproj.AssemblyReference.cache
 D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\obj\Debug\Farmacia.csproj.SuggestedBindingRedirects.cache
-D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\obj\Debug\Farmacia.Form1.resources
 D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\obj\Debug\Farmacia.Properties.Resources.resources
 D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\obj\Debug\Farmacia.ventana_farmacia.resources
 D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\obj\Debug\Farmacia.csproj.GenerateResource.cache
