@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\dt_medicamentos.cs" />
-    <Compile Include="Entidades\medicamentos.cs" />
+    <Compile Include="Entidades\Medicamentos.cs" />
     <Compile Include="ventana_farmacia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +78,9 @@
     </Compile>
     <EmbeddedResource Include="ventana_farmacia.resx">
       <DependentUpon>ventana_farmacia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventana_ventas.resx">
+      <DependentUpon>ventana_ventas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
