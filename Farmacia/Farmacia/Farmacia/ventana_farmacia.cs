@@ -17,13 +17,18 @@ namespace Farmacia
     public partial class ventana_farmacia : Form
     {
 
+        List<Medicamentos> medicamentos = new List<Medicamentos>();
+
         //Intancia del objeto de Medicamentos
         Medicamentos medi = new Medicamentos();
+
+
         int n = 0;
 
         public ventana_farmacia()
         {
             InitializeComponent();
+            llenarTabla();
         }
 
 
@@ -89,22 +94,18 @@ namespace Farmacia
 
         }
 
-        private void limpiarCampos()
-        {
-            txt_id.Text = "";
-            txt_nombre.Text = "";
-            txt_descripcion.Text = "";
-            txt_cantidad.Text = "";
-            txt_precio.Text = "";
-            txt_fecha.Text = "";
-        }
-
         private void bt_eliminar_Click(object sender, EventArgs e)
         {
-
             if (n != -1)
             {
+                MessageBox.Show("Se elimino el medicamento: "+ txt_nombre.Text);
                 tb_medicamentos.Rows.RemoveAt(n);
+                n = 0;
+                limpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar un registro");
             }
         }
 
@@ -123,6 +124,120 @@ namespace Farmacia
                 txt_precio.Text = Convert.ToString(row[4].Value);
                 txt_fecha.Text = Convert.ToString(row[5].Value);
             }
+
+            n = a;
         }
+
+        private void limpiarCampos()
+        {
+            txt_id.Text = "";
+            txt_nombre.Text = "";
+            txt_descripcion.Text = "";
+            txt_cantidad.Text = "";
+            txt_precio.Text = "";
+            txt_fecha.Text = "";
+        }
+        private void llenarTabla()
+        {
+            // Arreglo de string para generar datos de ejemplo con el nombre
+            string[] nombre = new string[10];
+            nombre[0] = "Paracetamol";
+            nombre[1] = "Ibuprofeno";
+            nombre[2] = "Amoxicilina";
+            nombre[3] = "Omeprazol";
+            nombre[4] = "Aspirina";
+            nombre[5] = "Diazepam";
+            nombre[6] = "Loratadina";
+            nombre[7] = "Simvastatina";
+            nombre[8] = "Metformina";
+            nombre[9] = "Atorvastatina";
+
+            // Arreglo de string para generar datos de ejemplo con descripción
+            string[] descripcion = new string[10];
+            descripcion[0] = "Medicamento para aliviar el dolor y reducir la fiebre.";
+            descripcion[1] = "Antiinflamatorio no esteroideo utilizado para aliviar el dolor y la inflamación.";
+            descripcion[2] = "Antibiótico de amplio espectro utilizado para tratar infecciones bacterianas.";
+            descripcion[3] = "Inhibidor de la bomba de protones utilizado para reducir la producción de ácido estomacal.";
+            descripcion[4] = "Analgésico y antipirético utilizado para aliviar el dolor y reducir la fiebre.";
+            descripcion[5] = "Benzodiazepina utilizada como ansiolítico y relajante muscular.";
+            descripcion[6] = "Antihistamínico utilizado para aliviar los síntomas de las alergias.";
+            descripcion[7] = "Estatina utilizada para reducir los niveles de colesterol en sangre.";
+            descripcion[8] = "Medicamento antidiabético utilizado para tratar la diabetes tipo 2.";
+            descripcion[9] = "Estatina utilizada para reducir los niveles de colesterol en sangre.";
+
+
+
+
+            //Arreglo de string para generar datos de ejemplo con la fecha
+            String[] fecha = new string[10];
+            fecha[0] = "10/2/22";
+            fecha[1] = "11/5/21";
+            fecha[2] = "20/1/23";
+            fecha[3] = "11/2/20";
+            fecha[4] = "4/5/23";
+            fecha[5] = "1/9/20";
+            fecha[6] = "11/3/23";
+            fecha[7] = "17/10/23";
+            fecha[8] = "29/12/21";
+            fecha[9] = "10/11/23";
+
+
+            //Arreglo de string para generar datos de ejemplo con la cantidad de productos
+            int[] cantidad = new int[10];
+            cantidad[0] = 10;
+            cantidad[1] = 20;
+            cantidad[2] = 11;
+            cantidad[3] = 22;
+            cantidad[4] = 42;
+            cantidad[5] = 100;
+            cantidad[6] = 122;
+            cantidad[7] = 54;
+            cantidad[8] = 23;
+            cantidad[9] = 51;
+
+
+            //Arreglo de string para generar datos de ejemplo de cada precio unitario
+            int[] precio_unitario = new int[10];
+            precio_unitario[0] = 100;
+            precio_unitario[1] = 20;
+            precio_unitario[2] = 12;
+            precio_unitario[3] = 22;
+            precio_unitario[4] = 65;
+            precio_unitario[5] = 10;
+            precio_unitario[6] = 20;
+            precio_unitario[7] = 54;
+            precio_unitario[8] = 40;
+            precio_unitario[9] = 50;
+
+            for (int i = 0; i < nombre.Length; i++)
+            {
+                medi = new Medicamentos();
+
+                medi.Id = "M00"+(i+1);
+                medi.Nombre = nombre[i];
+                medi.Descripcion = descripcion[i];
+                medi.Cantidad = cantidad[i];
+                medi.Precio_unitario = precio_unitario[i];
+                medi.Fecha_ingreso = fecha[i];
+
+                medicamentos.Add(medi);
+            }
+
+
+            foreach (Medicamentos me in medicamentos)
+            {
+                int n = tb_medicamentos.Rows.Add();
+
+                tb_medicamentos.Rows[n].Cells[0].Value = me.Id;
+                tb_medicamentos.Rows[n].Cells[1].Value = me.Nombre;
+                tb_medicamentos.Rows[n].Cells[2].Value = me.Descripcion;
+                tb_medicamentos.Rows[n].Cells[3].Value = me.Cantidad;
+                tb_medicamentos.Rows[n].Cells[4].Value = me.Precio_unitario;
+                tb_medicamentos.Rows[n].Cells[5].Value = me.Fecha_ingreso;
+                tb_medicamentos.Rows[n].Cells[6].Value = 0;
+            }
+
+        }
+
     }
 }
