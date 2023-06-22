@@ -240,7 +240,7 @@
             // 
             this.bt_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
             this.bt_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.bt_venta.Image = global::Farmacia.Properties.Resources.save2;
+            this.bt_venta.Image = global::Farmacia.Properties.Resources.cuenta_bancaria;
             this.bt_venta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_venta.Location = new System.Drawing.Point(717, 61);
             this.bt_venta.Name = "bt_venta";

@@ -359,6 +359,7 @@
             // bt_realizar_venta
             // 
             this.bt_realizar_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
+            this.bt_realizar_venta.Enabled = false;
             this.bt_realizar_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_realizar_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
             this.bt_realizar_venta.Image = global::Farmacia.Properties.Resources.carro;
