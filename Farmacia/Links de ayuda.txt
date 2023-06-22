@@ -10,10 +10,15 @@
 
 6) https://www.youtube.com/watch?v=pL12xWwGdXU
 
-7) https://www.youtube.com/watch?v=j48mEfISmms (Pasar por parametro datos a otra ventana)
+7) https://www.youtube.com/watch?v=j48mEfISmms (Pasar por parametro datos de structures a otra ventana)
+
+8) https://www.youtube.com/watch?v=SLrzQEqmsa4 (Pasar por parametro datos con variables a otra ventana)
 
 
 Videos para entender mejor:
 
 1) Concepto de POO:
 - https://www.youtube.com/watch?v=I848HdWjLMo
+
+2) Concepto de cartirolina:
+- https://www.youtube.com/watch?v=iik25wqIuFo

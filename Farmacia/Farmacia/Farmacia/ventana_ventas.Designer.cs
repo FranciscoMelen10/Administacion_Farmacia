@@ -35,7 +35,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.bt_agregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.txt_iva = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.txt_descuento = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -55,15 +53,19 @@
             this.txt_total_descuento = new System.Windows.Forms.TextBox();
             this.txt_total_iva = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.txt_cantidad_vender = new System.Windows.Forms.NumericUpDown();
+            this.bt_salir = new System.Windows.Forms.Button();
+            this.bt_realizar_venta = new System.Windows.Forms.Button();
+            this.bt_calcular_venta = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad_vender)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.bt_salir);
+            this.panel1.Controls.Add(this.txt_cantidad_vender);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.txt_total_iva);
             this.panel1.Controls.Add(this.txt_total_descuento);
@@ -72,7 +74,7 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txt_descuento);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.bt_realizar_venta);
             this.panel1.Controls.Add(this.txt_iva);
             this.panel1.Controls.Add(this.txt_fecha);
             this.panel1.Controls.Add(this.txt_precio);
@@ -88,7 +90,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.bt_agregar);
+            this.panel1.Controls.Add(this.bt_calcular_venta);
             this.panel1.Location = new System.Drawing.Point(19, 52);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(605, 422);
@@ -159,20 +161,6 @@
             this.label2.Size = new System.Drawing.Size(27, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "Id:";
-            // 
-            // bt_agregar
-            // 
-            this.bt_agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
-            this.bt_agregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.bt_agregar.Image = global::Farmacia.Properties.Resources.save2;
-            this.bt_agregar.Location = new System.Drawing.Point(65, 363);
-            this.bt_agregar.Name = "bt_agregar";
-            this.bt_agregar.Size = new System.Drawing.Size(188, 41);
-            this.bt_agregar.TabIndex = 11;
-            this.bt_agregar.Text = "Calcular Venta";
-            this.bt_agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.bt_agregar.UseVisualStyleBackColor = false;
-            this.bt_agregar.Click += new System.EventHandler(this.bt_agregar_Click);
             // 
             // label1
             // 
@@ -269,20 +257,6 @@
             this.txt_iva.Size = new System.Drawing.Size(260, 20);
             this.txt_iva.TabIndex = 38;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.button1.Image = global::Farmacia.Properties.Resources.save2;
-            this.button1.Location = new System.Drawing.Point(326, 361);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 44);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Realizar Venta";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // txt_descuento
             // 
             this.txt_descuento.Location = new System.Drawing.Point(143, 322);
@@ -361,12 +335,56 @@
             this.label11.TabIndex = 49;
             this.label11.Text = "Cantidad a vender:";
             // 
-            // numericUpDown1
+            // txt_cantidad_vender
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(170, 248);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(233, 20);
-            this.numericUpDown1.TabIndex = 50;
+            this.txt_cantidad_vender.Location = new System.Drawing.Point(170, 248);
+            this.txt_cantidad_vender.Name = "txt_cantidad_vender";
+            this.txt_cantidad_vender.Size = new System.Drawing.Size(233, 20);
+            this.txt_cantidad_vender.TabIndex = 50;
+            // 
+            // bt_salir
+            // 
+            this.bt_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.bt_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_salir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
+            this.bt_salir.Image = global::Farmacia.Properties.Resources.cerrar_sesion;
+            this.bt_salir.Location = new System.Drawing.Point(420, 367);
+            this.bt_salir.Name = "bt_salir";
+            this.bt_salir.Size = new System.Drawing.Size(148, 44);
+            this.bt_salir.TabIndex = 51;
+            this.bt_salir.Text = "Salir ";
+            this.bt_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.bt_salir.UseVisualStyleBackColor = false;
+            // 
+            // bt_realizar_venta
+            // 
+            this.bt_realizar_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
+            this.bt_realizar_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_realizar_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
+            this.bt_realizar_venta.Image = global::Farmacia.Properties.Resources.carro;
+            this.bt_realizar_venta.Location = new System.Drawing.Point(241, 367);
+            this.bt_realizar_venta.Name = "bt_realizar_venta";
+            this.bt_realizar_venta.Size = new System.Drawing.Size(148, 44);
+            this.bt_realizar_venta.TabIndex = 39;
+            this.bt_realizar_venta.Text = "Realizar Venta";
+            this.bt_realizar_venta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.bt_realizar_venta.UseVisualStyleBackColor = false;
+            this.bt_realizar_venta.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // bt_calcular_venta
+            // 
+            this.bt_calcular_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(172)))), ((int)(((byte)(80)))));
+            this.bt_calcular_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_calcular_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
+            this.bt_calcular_venta.Image = global::Farmacia.Properties.Resources.cuenta_bancaria;
+            this.bt_calcular_venta.Location = new System.Drawing.Point(58, 367);
+            this.bt_calcular_venta.Name = "bt_calcular_venta";
+            this.bt_calcular_venta.Size = new System.Drawing.Size(148, 41);
+            this.bt_calcular_venta.TabIndex = 11;
+            this.bt_calcular_venta.Text = "Calcular Venta";
+            this.bt_calcular_venta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.bt_calcular_venta.UseVisualStyleBackColor = false;
+            this.bt_calcular_venta.Click += new System.EventHandler(this.bt_agregar_Click);
             // 
             // ventana_ventas
             // 
@@ -381,7 +399,7 @@
             this.Load += new System.EventHandler(this.ventana_ventas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad_vender)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,7 +415,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button bt_agregar;
+        private System.Windows.Forms.Button bt_calcular_venta;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_fecha;
@@ -408,14 +426,15 @@
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.TextBox txt_descuento;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_realizar_venta;
         private System.Windows.Forms.TextBox txt_iva;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txt_total_iva;
         private System.Windows.Forms.TextBox txt_total_descuento;
         private System.Windows.Forms.TextBox txt_total;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown txt_cantidad_vender;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button bt_salir;
     }
 }
