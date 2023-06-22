@@ -29,7 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_eliminar = new System.Windows.Forms.Button();
+            this.txt_fecha = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_precio = new System.Windows.Forms.TextBox();
+            this.bt_clean = new System.Windows.Forms.Button();
             this.txt_descripcion = new System.Windows.Forms.RichTextBox();
+            this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
@@ -37,6 +43,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.bt_agregar = new System.Windows.Forms.Button();
+            this.bt_venta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_medicamentos = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,14 +54,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_cantidad = new System.Windows.Forms.TextBox();
-            this.txt_precio = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_fecha = new System.Windows.Forms.TextBox();
-            this.bt_eliminar = new System.Windows.Forms.Button();
-            this.bt_clean = new System.Windows.Forms.Button();
-            this.bt_agregar = new System.Windows.Forms.Button();
-            this.bt_venta = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_medicamentos)).BeginInit();
@@ -84,6 +84,59 @@
             this.panel1.Size = new System.Drawing.Size(846, 224);
             this.panel1.TabIndex = 0;
             // 
+            // bt_eliminar
+            // 
+            this.bt_eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
+            this.bt_eliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
+            this.bt_eliminar.Image = global::Farmacia.Properties.Resources.trash;
+            this.bt_eliminar.Location = new System.Drawing.Point(717, 117);
+            this.bt_eliminar.Name = "bt_eliminar";
+            this.bt_eliminar.Size = new System.Drawing.Size(126, 49);
+            this.bt_eliminar.TabIndex = 27;
+            this.bt_eliminar.Text = "Eliminar";
+            this.bt_eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.bt_eliminar.UseVisualStyleBackColor = false;
+            this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
+            // 
+            // txt_fecha
+            // 
+            this.txt_fecha.Location = new System.Drawing.Point(472, 157);
+            this.txt_fecha.Name = "txt_fecha";
+            this.txt_fecha.Size = new System.Drawing.Size(196, 20);
+            this.txt_fecha.TabIndex = 26;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label7.Location = new System.Drawing.Point(336, 153);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 20);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Fecha:";
+            // 
+            // txt_precio
+            // 
+            this.txt_precio.Location = new System.Drawing.Point(472, 90);
+            this.txt_precio.Name = "txt_precio";
+            this.txt_precio.Size = new System.Drawing.Size(196, 20);
+            this.txt_precio.TabIndex = 24;
+            // 
+            // bt_clean
+            // 
+            this.bt_clean.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
+            this.bt_clean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
+            this.bt_clean.Image = global::Farmacia.Properties.Resources.clear;
+            this.bt_clean.Location = new System.Drawing.Point(717, 172);
+            this.bt_clean.Name = "bt_clean";
+            this.bt_clean.Size = new System.Drawing.Size(126, 47);
+            this.bt_clean.TabIndex = 23;
+            this.bt_clean.Text = "Vaciar campos";
+            this.bt_clean.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.bt_clean.UseVisualStyleBackColor = false;
+            this.bt_clean.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // txt_descripcion
             // 
             this.txt_descripcion.Location = new System.Drawing.Point(113, 153);
@@ -91,6 +144,13 @@
             this.txt_descripcion.Size = new System.Drawing.Size(202, 54);
             this.txt_descripcion.TabIndex = 22;
             this.txt_descripcion.Text = "";
+            // 
+            // txt_cantidad
+            // 
+            this.txt_cantidad.Location = new System.Drawing.Point(472, 31);
+            this.txt_cantidad.Name = "txt_cantidad";
+            this.txt_cantidad.Size = new System.Drawing.Size(196, 20);
+            this.txt_cantidad.TabIndex = 21;
             // 
             // txt_nombre
             // 
@@ -161,6 +221,35 @@
             this.label2.Size = new System.Drawing.Size(27, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "Id:";
+            // 
+            // bt_agregar
+            // 
+            this.bt_agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
+            this.bt_agregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
+            this.bt_agregar.Image = global::Farmacia.Properties.Resources.save2;
+            this.bt_agregar.Location = new System.Drawing.Point(717, 9);
+            this.bt_agregar.Name = "bt_agregar";
+            this.bt_agregar.Size = new System.Drawing.Size(126, 46);
+            this.bt_agregar.TabIndex = 11;
+            this.bt_agregar.Text = "Agregar nuevo medicamento";
+            this.bt_agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.bt_agregar.UseVisualStyleBackColor = false;
+            this.bt_agregar.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // bt_venta
+            // 
+            this.bt_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
+            this.bt_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
+            this.bt_venta.Image = global::Farmacia.Properties.Resources.save2;
+            this.bt_venta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bt_venta.Location = new System.Drawing.Point(717, 61);
+            this.bt_venta.Name = "bt_venta";
+            this.bt_venta.Size = new System.Drawing.Size(126, 48);
+            this.bt_venta.TabIndex = 9;
+            this.bt_venta.Text = "Agregar venta";
+            this.bt_venta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.bt_venta.UseVisualStyleBackColor = false;
+            this.bt_venta.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // label1
             // 
@@ -234,95 +323,6 @@
             this.Column7.HeaderText = "Ventas del medicamento";
             this.Column7.Name = "Column7";
             // 
-            // txt_cantidad
-            // 
-            this.txt_cantidad.Location = new System.Drawing.Point(472, 31);
-            this.txt_cantidad.Name = "txt_cantidad";
-            this.txt_cantidad.Size = new System.Drawing.Size(196, 20);
-            this.txt_cantidad.TabIndex = 21;
-            // 
-            // txt_precio
-            // 
-            this.txt_precio.Location = new System.Drawing.Point(472, 90);
-            this.txt_precio.Name = "txt_precio";
-            this.txt_precio.Size = new System.Drawing.Size(196, 20);
-            this.txt_precio.TabIndex = 24;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label7.Location = new System.Drawing.Point(336, 153);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 20);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Fecha:";
-            // 
-            // txt_fecha
-            // 
-            this.txt_fecha.Location = new System.Drawing.Point(472, 157);
-            this.txt_fecha.Name = "txt_fecha";
-            this.txt_fecha.Size = new System.Drawing.Size(196, 20);
-            this.txt_fecha.TabIndex = 26;
-            // 
-            // bt_eliminar
-            // 
-            this.bt_eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
-            this.bt_eliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.bt_eliminar.Image = global::Farmacia.Properties.Resources.trash;
-            this.bt_eliminar.Location = new System.Drawing.Point(717, 117);
-            this.bt_eliminar.Name = "bt_eliminar";
-            this.bt_eliminar.Size = new System.Drawing.Size(126, 49);
-            this.bt_eliminar.TabIndex = 27;
-            this.bt_eliminar.Text = "Eliminar";
-            this.bt_eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.bt_eliminar.UseVisualStyleBackColor = false;
-            this.bt_eliminar.Click += new System.EventHandler(this.bt_eliminar_Click);
-            // 
-            // bt_clean
-            // 
-            this.bt_clean.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
-            this.bt_clean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.bt_clean.Image = global::Farmacia.Properties.Resources.clear;
-            this.bt_clean.Location = new System.Drawing.Point(717, 172);
-            this.bt_clean.Name = "bt_clean";
-            this.bt_clean.Size = new System.Drawing.Size(126, 47);
-            this.bt_clean.TabIndex = 23;
-            this.bt_clean.Text = "Vaciar campos";
-            this.bt_clean.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.bt_clean.UseVisualStyleBackColor = false;
-            this.bt_clean.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // bt_agregar
-            // 
-            this.bt_agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
-            this.bt_agregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.bt_agregar.Image = global::Farmacia.Properties.Resources.save2;
-            this.bt_agregar.Location = new System.Drawing.Point(717, 9);
-            this.bt_agregar.Name = "bt_agregar";
-            this.bt_agregar.Size = new System.Drawing.Size(126, 46);
-            this.bt_agregar.TabIndex = 11;
-            this.bt_agregar.Text = "Agregar nuevo medicamento";
-            this.bt_agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.bt_agregar.UseVisualStyleBackColor = false;
-            this.bt_agregar.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // bt_venta
-            // 
-            this.bt_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
-            this.bt_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.bt_venta.Image = global::Farmacia.Properties.Resources.save2;
-            this.bt_venta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bt_venta.Location = new System.Drawing.Point(717, 61);
-            this.bt_venta.Name = "bt_venta";
-            this.bt_venta.Size = new System.Drawing.Size(126, 48);
-            this.bt_venta.TabIndex = 9;
-            this.bt_venta.Text = "Agregar venta";
-            this.bt_venta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.bt_venta.UseVisualStyleBackColor = false;
-            this.bt_venta.Click += new System.EventHandler(this.button3_Click_1);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Farmacia.Properties.Resources.Logo_Farmacia;
@@ -343,6 +343,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_medicamentos);
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "ventana_farmacia";
             this.Text = "Administracion de Farmacia";
             this.Load += new System.EventHandler(this.ventana_farmacia_Load);

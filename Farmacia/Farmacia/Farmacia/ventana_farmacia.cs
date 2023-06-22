@@ -56,7 +56,18 @@ namespace Farmacia
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            controlador_medicamento();
+            medi = new Medicamentos();
+
+            medi.Id = txt_id.Text;
+            medi.Nombre = txt_nombre.Text;
+            medi.Descripcion = txt_descripcion.Text;
+            medi.Cantidad = int.Parse(txt_cantidad.Text);
+            medi.Precio_unitario = double.Parse(txt_cantidad.Text);
+            medi.Fecha_ingreso = txt_id.Text;
+
+
+            ventana_ventas form = new ventana_ventas();
+            form.ShowDialog();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -180,7 +191,7 @@ namespace Farmacia
                     verificar_numero = false;
 
                     //Comprueba si el precio es un double
-                    verificar_numero = double.TryParse(txt_cantidad.Text, out precio);
+                    verificar_numero = double.TryParse(txt_precio.Text, out precio);
 
                     if (verificar_numero)
                     {
