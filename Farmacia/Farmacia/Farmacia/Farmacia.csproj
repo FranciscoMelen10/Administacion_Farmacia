@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Datos\dt_medicamentos.cs" />
     <Compile Include="Entidades\Medicamentos.cs" />
     <Compile Include="ventana_farmacia.cs">
       <SubType>Form</SubType>

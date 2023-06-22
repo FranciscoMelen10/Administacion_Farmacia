@@ -1,5 +1,4 @@
-﻿using Farmacia.Datos;
-using Farmacia.Entidades;
+﻿using Farmacia.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,15 +16,16 @@ namespace Farmacia
     public partial class ventana_farmacia : Form
     {
 
+        //Instacia de una lista de objetos con Medicamentos
         List<Medicamentos> medicamentos = new List<Medicamentos>();
 
         //Intancia del objeto de Medicamentos
         Medicamentos medi = new Medicamentos();
 
-
+        //Control de las filas de la tabla
         int n = 0;
 
-        public ventana_farmacia()
+        public ventana_farmacia() // inicializa los componentes de la ventana y rellena la tabla con el metodo de "llenarTabla" con datos de ejemplo
         {
             InitializeComponent();
             llenarTabla();
@@ -56,6 +56,7 @@ namespace Farmacia
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            controlador_medicamento();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -72,50 +73,74 @@ namespace Farmacia
         {
 
             if (txt_id.Text == "" && txt_nombre.Text == "" && txt_descripcion.Text == ""
-                && txt_cantidad.Text == "" && txt_precio.Text == "" && txt_fecha.Text == "")
+                && txt_cantidad.Text == "" && txt_precio.Text == "" && txt_fecha.Text == "") //Comprueba que ningun campo este vacio
             {
                 MessageBox.Show("Llena los campos vacios");
             } else
             {
-                MessageBox.Show("Se guardo con exito el medicamento "+ txt_nombre.Text);
 
-                int n = tb_medicamentos.Rows.Add();
+                if (controlador_medicamento()) //Este if sirve para comprobar si el usuario digito bien los datos a los text fields correspondientes
+                {
+                    MessageBox.Show("Se guardo con exito el medicamento " + txt_nombre.Text); //Mensaje en pantalla
 
-                tb_medicamentos.Rows[n].Cells[0].Value = txt_id.Text;
-                tb_medicamentos.Rows[n].Cells[1].Value = txt_nombre.Text;
-                tb_medicamentos.Rows[n].Cells[2].Value = txt_descripcion.Text;
-                tb_medicamentos.Rows[n].Cells[3].Value = txt_cantidad.Text;
-                tb_medicamentos.Rows[n].Cells[4].Value = txt_precio.Text;
-                tb_medicamentos.Rows[n].Cells[5].Value = txt_fecha.Text;
-                tb_medicamentos.Rows[n].Cells[6].Value = 0;
-                limpiarCampos();
+                    int n = tb_medicamentos.Rows.Add(); //Fila que selecciono el usuario en la tabla de medicamentos
+
+                    tb_medicamentos.Rows[n].Cells[0].Value = txt_id.Text;
+                    tb_medicamentos.Rows[n].Cells[1].Value = txt_nombre.Text;
+                    tb_medicamentos.Rows[n].Cells[2].Value = txt_descripcion.Text;
+                    tb_medicamentos.Rows[n].Cells[3].Value = txt_cantidad.Text;
+                    tb_medicamentos.Rows[n].Cells[4].Value = txt_precio.Text;
+                    tb_medicamentos.Rows[n].Cells[5].Value = txt_fecha.Text;
+                    tb_medicamentos.Rows[n].Cells[6].Value = 0;
+                    limpiarCampos();
+                }
+                
             }
             
-
         }
+
+
 
         private void bt_eliminar_Click(object sender, EventArgs e)
         {
-            if (n != -1)
+            try
             {
-                MessageBox.Show("Se elimino el medicamento: "+ txt_nombre.Text);
-                tb_medicamentos.Rows.RemoveAt(n);
-                n = 0;
-                limpiarCampos();
+                if (txt_id.Text == "" && txt_nombre.Text == "" && txt_descripcion.Text == ""
+              && txt_cantidad.Text == "" && txt_precio.Text == "" && txt_fecha.Text == "") //Comprueba que ningun campo este vacio
+                {
+                    MessageBox.Show("Llena los campos vacios");
+                }
+                else
+                {
+                    if (n != -1)
+                    {
+                        MessageBox.Show("Se elimino el medicamento: " + txt_nombre.Text);
+                        tb_medicamentos.Rows.RemoveAt(n); //En la fila seleccionada por el usuario, la elimina completamente
+                        n = 0; //Se asigna en 0 para que el usuario pueda elegir nuevamente otro registro de la tabla
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar un registro");
+                    }
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar un registro");
+                MessageBox.Show("Hubo un error de" + ex);
             }
+    
         }
 
         private void tb_medicamentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int a = e.RowIndex;
+            n = e.RowIndex; //Asignarle el valor de la posicion en donde el usuario selecciono
 
-            if(a != -1)
+            if(n != -1)
             {
-                DataGridViewCellCollection row = tb_medicamentos.Rows[a].Cells;
+                Console.WriteLine("Fila seleccionada:" + n);
+                DataGridViewCellCollection row = tb_medicamentos.Rows[n].Cells;
 
                 txt_id.Text = Convert.ToString(row[0].Value);
                 txt_nombre.Text = Convert.ToString(row[1].Value);
@@ -124,12 +149,11 @@ namespace Farmacia
                 txt_precio.Text = Convert.ToString(row[4].Value);
                 txt_fecha.Text = Convert.ToString(row[5].Value);
             }
-
-            n = a;
         }
 
         private void limpiarCampos()
         {
+            //Limpia los text fields y facilitar el uso del programa
             txt_id.Text = "";
             txt_nombre.Text = "";
             txt_descripcion.Text = "";
@@ -137,6 +161,66 @@ namespace Farmacia
             txt_precio.Text = "";
             txt_fecha.Text = "";
         }
+
+        private bool controlador_medicamento()
+        {
+            bool controlador = false; //Se retornara en la funcion para agregar los datos a la tabla correctamente
+            try
+            {
+                bool verificar_numero; //Booleano para comprobar si el tipo de dato que registro el usuario es correcto
+                int cantidad = 0; //Almacenara la variable de lo txt_cantidad, pero tenenmos que comprobar el tipo de variable que son
+                double precio = 0; //Almacenara las variable de lo txt_precio, pero tenenmos que comprobar el tipo de variable que son
+
+                //Comprueba si la cantidad es un entero
+                verificar_numero = int.TryParse(txt_cantidad.Text, out cantidad);
+
+                if (verificar_numero) {
+
+                    //Reutilizamos la misma variable para confirmar si la variable es un número
+                    verificar_numero = false;
+
+                    //Comprueba si el precio es un double
+                    verificar_numero = double.TryParse(txt_cantidad.Text, out precio);
+
+                    if (verificar_numero)
+                    {
+                        if (cantidad >= 0)
+                        {
+                            if (precio >= 0)
+                            {
+                                controlador = true; // Como el controlador esta en verdadero, entonces todos los datos que digito el usuario son correctos y podra agregar ese medicamento a la tabla
+                            }
+                            else
+                            {
+                                MessageBox.Show("El precio debe ser mayor de 0, vuelva a intentarlo");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La cantida debe ser mayor a 0, vuelva a intentarlo");
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El precio que digito no es un numero valido, vuelva a intentarlo");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La cantidad que digito no es un numero valido, vuelva a intentarlo");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubo un error de" +ex);
+            }
+            
+            return controlador;
+
+        }
+
         private void llenarTabla()
         {
             // Arreglo de string para generar datos de ejemplo con el nombre

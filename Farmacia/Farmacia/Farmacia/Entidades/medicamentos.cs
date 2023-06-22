@@ -4,6 +4,8 @@ namespace Farmacia.Entidades
 {
     internal class Medicamentos
     {
+
+        //Atributos de la clase de Medicamentos
         private string id;
         private string nombre;
         private string descripcion;
@@ -11,10 +13,11 @@ namespace Farmacia.Entidades
         private double precio_unitario;
         private int cantidad;
 
-        public Medicamentos()
+        public Medicamentos() //Constructor vacio para instanciar a la clase sin necesidad de parsaele todos sus atributos por parametro
         {
         }
 
+        //Constructor con todos sus atributos por parametro 
         public Medicamentos(string id, string nombre, string descripcion, string fecha_ingreso, double precio_unitario, int cantidad)
         {
             this.id = id;
@@ -25,6 +28,7 @@ namespace Farmacia.Entidades
             this.cantidad = cantidad;
         }
 
+        //Getter and Setters
         public string Id
         {
             get
