@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Farmacia.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace Farmacia
 {
     public partial class ventana_ventas : Form
     {
-        public ventana_ventas()
+        public ventana_ventas(string id, string nombre, string descripcion, double precio, int cantidad , string fecha)
         {
             InitializeComponent();
+            txt_nombre.Text = nombre;
+            txt_id.Text = id;
+            txt_descripcion.Text = descripcion;
+            txt_cantidad.Text = cantidad.ToString();
+            txt_precio.Text = precio.ToString();
+            txt_fecha.Text = fecha;
         }
 
         private void txt_id_TextChanged(object sender, EventArgs e)

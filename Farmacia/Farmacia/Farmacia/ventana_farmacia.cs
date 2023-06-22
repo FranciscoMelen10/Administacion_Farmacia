@@ -54,20 +54,25 @@ namespace Farmacia
 
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        public void button3_Click_1(object sender, EventArgs e)
         {
-            medi = new Medicamentos();
+            if (txt_id.Text == "" && txt_nombre.Text == "" && txt_descripcion.Text == ""
+                && txt_cantidad.Text == "" && txt_precio.Text == "" && txt_fecha.Text == "") //Comprueba que ningun campo este vacio
+            {
+                MessageBox.Show("Llena los campos vacios");
+            }
+            else
+            {
+                if (controlador_medicamento())
+                {
+                    ventana_ventas formulario_ventas = new ventana_ventas(txt_id.Text, txt_nombre.Text,
+                    txt_descripcion.Text, double.Parse(txt_precio.Text), int.Parse(txt_cantidad.Text), txt_fecha.Text); //Pasar por parametro los datos seleccionados para poder hacer la venta 
 
-            medi.Id = txt_id.Text;
-            medi.Nombre = txt_nombre.Text;
-            medi.Descripcion = txt_descripcion.Text;
-            medi.Cantidad = int.Parse(txt_cantidad.Text);
-            medi.Precio_unitario = double.Parse(txt_cantidad.Text);
-            medi.Fecha_ingreso = txt_id.Text;
+                    formulario_ventas.ShowDialog();
+                }
 
-
-            ventana_ventas form = new ventana_ventas();
-            form.ShowDialog();
+            }
+                
         }
 
         private void button1_Click_1(object sender, EventArgs e)
