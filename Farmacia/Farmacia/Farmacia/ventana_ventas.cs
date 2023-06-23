@@ -13,7 +13,7 @@ namespace Farmacia
 {
     public partial class ventana_ventas : Form
     {
-        public ventana_ventas(string id, string nombre, string descripcion, double precio, int cantidad , string fecha)
+        public ventana_ventas(string id, string nombre, string descripcion, double precio, int cantidad, string fecha)
         {
             InitializeComponent();
             txt_nombre.Text = nombre;
@@ -84,17 +84,15 @@ namespace Farmacia
         private void bt_agregar_Click(object sender, EventArgs e)
         {
             bool verificar_numero; //Booleano para comprobar si el tipo de dato que registro el usuario es correcto
-            int cantidad = 0; //Almacenara la variable de lo txt_cantidad, pero tenenmos que comprobar el tipo de variable que son
-            int iva = 0; //Almacenara las variable de lo txt_iva, pero tenenmos que comprobar el tipo de variable que son
-            int descuento = 0; //Almacenara las variable de lo txt_iva, pero tenenmos que comprobar el tipo de variable que son
+            int cantidad = int.Parse(txt_cantidad.Text); //Almacenara la variable de lo txt_cantidad, pero tenenmos que comprobar el tipo de variable que son
+            double iva = 0.15; //Almacenara las variable de lo txt_iva, pero tenenmos que comprobar el tipo de variable que son
+            int descuento; //Almacenara las variable de lo txt_iva, pero tenenmos que comprobar el tipo de variable que son
 
 
-            //Comprueba si la cantidad es un entero
-            verificar_numero = int.TryParse(txt_cantidad.Text, out cantidad);
 
-            if (txt_descuento.Text != "" && txt_iva.Text != "")
+            if (txt_descuento.Text != "")
             {
-                if (verificar_numero)
+                if (cantidad >= txt_cantidad_vender.Value)
                 {
 
                     //Reutilizamos la misma variable para confirmar si la variable es un número
@@ -104,43 +102,71 @@ namespace Farmacia
                     verificar_numero = int.TryParse(txt_descuento.Text, out descuento);
 
                     if (verificar_numero)
+
                     {
-                        //Reutilizamos la misma variable para confirmar si la variable es un número
-                        verificar_numero = false;
+                        descuento = int.Parse(txt_descuento.Text); //Como confirmamos que el dato que digito el txt_descuento es un numero entonces le asignamos ese valor
 
-                        //Comprueba si el descuento es un entero
-                        verificar_numero = int.TryParse(txt_iva.Text, out iva);
-
-                        if (verificar_numero)
-                        {                        
-                            if (txt_cantidad_vender.Value > 0)
+                        if (txt_cantidad_vender.Value > 0) //Comprueba que el usuario digito un numero correcto en la cantidad de medicamentos a vender
+                        {
+                            if (descuento >= 0 && descuento <= 100)
                             {
-                                if (descuento >= 0)
-                                {
-                                    if (iva >= 0)
-                                    {
-                                       MessageBox.Show("Hik");
-                                    }
-                                    else
-                                    {
-                                       MessageBox.Show("El iva debe ser mayor o igual a 0, vuelva a intentarlo");
-                                    }
 
+                                // Validaciones de los campos de descuento e iva
+
+                                double total_venta = ((int)txt_cantidad_vender.Value * double.Parse(txt_precio.Text));//Variable para sacar el total de los gastos del iva y descuentos digitado
+                                txt_sub_total.Text = total_venta.ToString(); // Agregamos el sub total al txt_sub_total
+
+                                if (check_iva.Checked) //Si se le va agregar el iva al medicamento
+                                {
+                                    //Calculamos el iva total de la venta total
+                                    double iva_total = total_venta * iva;
+
+                                    //Agregamor el total en el txt_iva_total
+                                    txt_total_iva.Text = iva_total.ToString();
                                 }
                                 else
                                 {
-                                    MessageBox.Show("El descuento debe ser mayor o igual a 0, vuelva a intentarlo");
+                                    //Calculamos el iva total de la venta total
+                                    double iva_total = 0;
+
+                                    //Agregamor el total en el txt_iva_total
+                                    txt_total_iva.Text = iva_total.ToString();
                                 }
+
+                                if (descuento > 0)
+                                {
+                                    //Calculamos el iva total de la venta total
+                                    double descuento_total = total_venta * ((double)descuento / 100);
+
+                                    //Agregamor el total en el txt_iva_total
+                                    txt_total_descuento.Text = descuento_total.ToString();
+                                }
+                                else
+                                {
+                                    //Calculamos el descuento total de la venta total
+                                    double descuento_total = 0;
+
+                                    //Agregamor el total en el txt_iva_total
+                                    txt_total_descuento.Text = descuento_total.ToString();
+                                }
+
+                                total_venta = total_venta + double.Parse(txt_total_descuento.Text); // Aplicamos el descuento al sub total
+                                total_venta = total_venta - double.Parse(txt_total_iva.Text); // Aplicamos el iva al sub total
+
+                                txt_total.Text = total_venta.ToString();
+                                bt_realizar_venta.Enabled = true;
+
                             }
                             else
                             {
-                                MessageBox.Show("La cantida a vender debe ser mayor a 0, vuelva a intentarlo");
+                                MessageBox.Show("El descuento debe ser mayor o igual a 0 y menor o igual a 100");
                             }
-                            
+
                         }
+
                         else
                         {
-                            MessageBox.Show("El iva que digito no es un numero valido, vuelva a intentarlo");
+                            MessageBox.Show("La cantida a vender debe ser mayor a 0, vuelva a intentarlo");
                         }
 
                     }
@@ -149,12 +175,13 @@ namespace Farmacia
                         MessageBox.Show("El descuento que digito no es un numero valido, vuelva a intentarlo");
 
                     }
+
                 }
                 else
                 {
-                    MessageBox.Show("La cantidad que digito no es un numero valido, vuelva a intentarlo");
-
+                    MessageBox.Show("La cantidad a vender debe ser menor o igual que cantidad incial");
                 }
+
             }
             else
             {
@@ -162,12 +189,31 @@ namespace Farmacia
 
             }
 
-            bt_realizar_venta.Enabled = true;
         }
 
         private void ventana_ventas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ventana_ventas_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

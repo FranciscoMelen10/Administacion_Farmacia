@@ -29,34 +29,36 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.check_iva = new System.Windows.Forms.CheckBox();
+            this.bt_salir = new System.Windows.Forms.Button();
+            this.txt_cantidad_vender = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_total_iva = new System.Windows.Forms.TextBox();
+            this.txt_total_descuento = new System.Windows.Forms.TextBox();
+            this.txt_total = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_descuento = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.bt_realizar_venta = new System.Windows.Forms.Button();
             this.txt_fecha = new System.Windows.Forms.TextBox();
             this.txt_precio = new System.Windows.Forms.TextBox();
             this.txt_descripcion = new System.Windows.Forms.RichTextBox();
             this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
-            this.txt_iva = new System.Windows.Forms.TextBox();
-            this.txt_descuento = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_total = new System.Windows.Forms.TextBox();
-            this.txt_total_descuento = new System.Windows.Forms.TextBox();
-            this.txt_total_iva = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txt_cantidad_vender = new System.Windows.Forms.NumericUpDown();
-            this.bt_salir = new System.Windows.Forms.Button();
-            this.bt_realizar_venta = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.bt_calcular_venta = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_sub_total = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad_vender)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +66,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.panel1.Controls.Add(this.txt_sub_total);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.check_iva);
             this.panel1.Controls.Add(this.bt_salir);
             this.panel1.Controls.Add(this.txt_cantidad_vender);
             this.panel1.Controls.Add(this.label11);
@@ -75,7 +80,6 @@
             this.panel1.Controls.Add(this.txt_descuento);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.bt_realizar_venta);
-            this.panel1.Controls.Add(this.txt_iva);
             this.panel1.Controls.Add(this.txt_fecha);
             this.panel1.Controls.Add(this.txt_precio);
             this.panel1.Controls.Add(this.txt_descripcion);
@@ -95,6 +99,216 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(605, 422);
             this.panel1.TabIndex = 1;
+            // 
+            // check_iva
+            // 
+            this.check_iva.AutoSize = true;
+            this.check_iva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_iva.ForeColor = System.Drawing.SystemColors.Control;
+            this.check_iva.Location = new System.Drawing.Point(143, 287);
+            this.check_iva.Name = "check_iva";
+            this.check_iva.Size = new System.Drawing.Size(71, 24);
+            this.check_iva.TabIndex = 52;
+            this.check_iva.Text = "Aplica";
+            this.check_iva.UseVisualStyleBackColor = true;
+            // 
+            // bt_salir
+            // 
+            this.bt_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.bt_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_salir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
+            this.bt_salir.Image = global::Farmacia.Properties.Resources.cerrar_sesion;
+            this.bt_salir.Location = new System.Drawing.Point(420, 367);
+            this.bt_salir.Name = "bt_salir";
+            this.bt_salir.Size = new System.Drawing.Size(148, 44);
+            this.bt_salir.TabIndex = 51;
+            this.bt_salir.Text = "Salir ";
+            this.bt_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.bt_salir.UseVisualStyleBackColor = false;
+            this.bt_salir.Click += new System.EventHandler(this.bt_salir_Click);
+            // 
+            // txt_cantidad_vender
+            // 
+            this.txt_cantidad_vender.Location = new System.Drawing.Point(170, 248);
+            this.txt_cantidad_vender.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.txt_cantidad_vender.Name = "txt_cantidad_vender";
+            this.txt_cantidad_vender.Size = new System.Drawing.Size(233, 20);
+            this.txt_cantidad_vender.TabIndex = 50;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label11.Location = new System.Drawing.Point(15, 248);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(149, 20);
+            this.label11.TabIndex = 49;
+            this.label11.Text = "Cantidad a vender:";
+            // 
+            // txt_total_iva
+            // 
+            this.txt_total_iva.Enabled = false;
+            this.txt_total_iva.Location = new System.Drawing.Point(434, 112);
+            this.txt_total_iva.Name = "txt_total_iva";
+            this.txt_total_iva.Size = new System.Drawing.Size(156, 20);
+            this.txt_total_iva.TabIndex = 48;
+            this.txt_total_iva.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // txt_total_descuento
+            // 
+            this.txt_total_descuento.Enabled = false;
+            this.txt_total_descuento.Location = new System.Drawing.Point(434, 176);
+            this.txt_total_descuento.Name = "txt_total_descuento";
+            this.txt_total_descuento.Size = new System.Drawing.Size(156, 20);
+            this.txt_total_descuento.TabIndex = 47;
+            // 
+            // txt_total
+            // 
+            this.txt_total.Enabled = false;
+            this.txt_total.Location = new System.Drawing.Point(434, 240);
+            this.txt_total.Name = "txt_total";
+            this.txt_total.Size = new System.Drawing.Size(156, 20);
+            this.txt_total.TabIndex = 46;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label13.Location = new System.Drawing.Point(430, 217);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 20);
+            this.label13.TabIndex = 45;
+            this.label13.Text = "Total:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label12.Location = new System.Drawing.Point(430, 147);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(160, 20);
+            this.label12.TabIndex = 43;
+            this.label12.Text = "Total del descuento:";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // txt_descuento
+            // 
+            this.txt_descuento.Location = new System.Drawing.Point(143, 322);
+            this.txt_descuento.Name = "txt_descuento";
+            this.txt_descuento.Size = new System.Drawing.Size(260, 20);
+            this.txt_descuento.TabIndex = 41;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label8.Location = new System.Drawing.Point(15, 320);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 20);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Descuento:";
+            // 
+            // bt_realizar_venta
+            // 
+            this.bt_realizar_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
+            this.bt_realizar_venta.Enabled = false;
+            this.bt_realizar_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_realizar_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
+            this.bt_realizar_venta.Image = global::Farmacia.Properties.Resources.carro;
+            this.bt_realizar_venta.Location = new System.Drawing.Point(241, 367);
+            this.bt_realizar_venta.Name = "bt_realizar_venta";
+            this.bt_realizar_venta.Size = new System.Drawing.Size(148, 44);
+            this.bt_realizar_venta.TabIndex = 39;
+            this.bt_realizar_venta.Text = "Realizar Venta";
+            this.bt_realizar_venta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.bt_realizar_venta.UseVisualStyleBackColor = false;
+            this.bt_realizar_venta.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txt_fecha
+            // 
+            this.txt_fecha.Enabled = false;
+            this.txt_fecha.Location = new System.Drawing.Point(143, 208);
+            this.txt_fecha.Name = "txt_fecha";
+            this.txt_fecha.Size = new System.Drawing.Size(260, 20);
+            this.txt_fecha.TabIndex = 37;
+            this.txt_fecha.TextChanged += new System.EventHandler(this.txt_fecha_TextChanged);
+            // 
+            // txt_precio
+            // 
+            this.txt_precio.Enabled = false;
+            this.txt_precio.Location = new System.Drawing.Point(143, 131);
+            this.txt_precio.Name = "txt_precio";
+            this.txt_precio.Size = new System.Drawing.Size(260, 20);
+            this.txt_precio.TabIndex = 36;
+            this.txt_precio.TextChanged += new System.EventHandler(this.txt_precio_TextChanged);
+            // 
+            // txt_descripcion
+            // 
+            this.txt_descripcion.Enabled = false;
+            this.txt_descripcion.Location = new System.Drawing.Point(143, 81);
+            this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.Size = new System.Drawing.Size(260, 36);
+            this.txt_descripcion.TabIndex = 35;
+            this.txt_descripcion.Text = "";
+            this.txt_descripcion.TextChanged += new System.EventHandler(this.txt_descripcion_TextChanged);
+            // 
+            // txt_cantidad
+            // 
+            this.txt_cantidad.Enabled = false;
+            this.txt_cantidad.Location = new System.Drawing.Point(143, 167);
+            this.txt_cantidad.Name = "txt_cantidad";
+            this.txt_cantidad.Size = new System.Drawing.Size(260, 20);
+            this.txt_cantidad.TabIndex = 34;
+            this.txt_cantidad.TextChanged += new System.EventHandler(this.txt_cantidad_TextChanged);
+            // 
+            // txt_nombre
+            // 
+            this.txt_nombre.Enabled = false;
+            this.txt_nombre.Location = new System.Drawing.Point(143, 46);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(260, 20);
+            this.txt_nombre.TabIndex = 33;
+            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
+            // 
+            // txt_id
+            // 
+            this.txt_id.Enabled = false;
+            this.txt_id.Location = new System.Drawing.Point(143, 11);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(260, 20);
+            this.txt_id.TabIndex = 32;
+            this.txt_id.TextChanged += new System.EventHandler(this.txt_id_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label10.Location = new System.Drawing.Point(430, 89);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(105, 20);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Total en IVA:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label1.Location = new System.Drawing.Point(15, 283);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 20);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "IVA:";
             // 
             // label7
             // 
@@ -162,216 +376,6 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Id:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(15, 283);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 20);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "IVA:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label9.Location = new System.Drawing.Point(14, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(247, 27);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Venta de medicamento";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label10.Location = new System.Drawing.Point(430, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(105, 20);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "Total en IVA:";
-            // 
-            // txt_fecha
-            // 
-            this.txt_fecha.Enabled = false;
-            this.txt_fecha.Location = new System.Drawing.Point(143, 208);
-            this.txt_fecha.Name = "txt_fecha";
-            this.txt_fecha.Size = new System.Drawing.Size(260, 20);
-            this.txt_fecha.TabIndex = 37;
-            this.txt_fecha.TextChanged += new System.EventHandler(this.txt_fecha_TextChanged);
-            // 
-            // txt_precio
-            // 
-            this.txt_precio.Enabled = false;
-            this.txt_precio.Location = new System.Drawing.Point(143, 169);
-            this.txt_precio.Name = "txt_precio";
-            this.txt_precio.Size = new System.Drawing.Size(260, 20);
-            this.txt_precio.TabIndex = 36;
-            this.txt_precio.TextChanged += new System.EventHandler(this.txt_precio_TextChanged);
-            // 
-            // txt_descripcion
-            // 
-            this.txt_descripcion.Enabled = false;
-            this.txt_descripcion.Location = new System.Drawing.Point(143, 81);
-            this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(260, 36);
-            this.txt_descripcion.TabIndex = 35;
-            this.txt_descripcion.Text = "";
-            this.txt_descripcion.TextChanged += new System.EventHandler(this.txt_descripcion_TextChanged);
-            // 
-            // txt_cantidad
-            // 
-            this.txt_cantidad.Enabled = false;
-            this.txt_cantidad.Location = new System.Drawing.Point(143, 131);
-            this.txt_cantidad.Name = "txt_cantidad";
-            this.txt_cantidad.Size = new System.Drawing.Size(260, 20);
-            this.txt_cantidad.TabIndex = 34;
-            this.txt_cantidad.TextChanged += new System.EventHandler(this.txt_cantidad_TextChanged);
-            // 
-            // txt_nombre
-            // 
-            this.txt_nombre.Enabled = false;
-            this.txt_nombre.Location = new System.Drawing.Point(143, 46);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(260, 20);
-            this.txt_nombre.TabIndex = 33;
-            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
-            // 
-            // txt_id
-            // 
-            this.txt_id.Enabled = false;
-            this.txt_id.Location = new System.Drawing.Point(143, 11);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(260, 20);
-            this.txt_id.TabIndex = 32;
-            this.txt_id.TextChanged += new System.EventHandler(this.txt_id_TextChanged);
-            // 
-            // txt_iva
-            // 
-            this.txt_iva.Location = new System.Drawing.Point(143, 285);
-            this.txt_iva.Name = "txt_iva";
-            this.txt_iva.Size = new System.Drawing.Size(260, 20);
-            this.txt_iva.TabIndex = 38;
-            // 
-            // txt_descuento
-            // 
-            this.txt_descuento.Location = new System.Drawing.Point(143, 322);
-            this.txt_descuento.Name = "txt_descuento";
-            this.txt_descuento.Size = new System.Drawing.Size(260, 20);
-            this.txt_descuento.TabIndex = 41;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label8.Location = new System.Drawing.Point(15, 320);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 20);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "Descuento:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label12.Location = new System.Drawing.Point(430, 147);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(160, 20);
-            this.label12.TabIndex = 43;
-            this.label12.Text = "Total del descuento:";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label13.Location = new System.Drawing.Point(430, 237);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 20);
-            this.label13.TabIndex = 45;
-            this.label13.Text = "Total:";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // txt_total
-            // 
-            this.txt_total.Enabled = false;
-            this.txt_total.Location = new System.Drawing.Point(434, 260);
-            this.txt_total.Name = "txt_total";
-            this.txt_total.Size = new System.Drawing.Size(156, 20);
-            this.txt_total.TabIndex = 46;
-            // 
-            // txt_total_descuento
-            // 
-            this.txt_total_descuento.Enabled = false;
-            this.txt_total_descuento.Location = new System.Drawing.Point(434, 176);
-            this.txt_total_descuento.Name = "txt_total_descuento";
-            this.txt_total_descuento.Size = new System.Drawing.Size(156, 20);
-            this.txt_total_descuento.TabIndex = 47;
-            // 
-            // txt_total_iva
-            // 
-            this.txt_total_iva.Enabled = false;
-            this.txt_total_iva.Location = new System.Drawing.Point(434, 88);
-            this.txt_total_iva.Name = "txt_total_iva";
-            this.txt_total_iva.Size = new System.Drawing.Size(156, 20);
-            this.txt_total_iva.TabIndex = 48;
-            this.txt_total_iva.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label11.Location = new System.Drawing.Point(15, 248);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(149, 20);
-            this.label11.TabIndex = 49;
-            this.label11.Text = "Cantidad a vender:";
-            // 
-            // txt_cantidad_vender
-            // 
-            this.txt_cantidad_vender.Location = new System.Drawing.Point(170, 248);
-            this.txt_cantidad_vender.Name = "txt_cantidad_vender";
-            this.txt_cantidad_vender.Size = new System.Drawing.Size(233, 20);
-            this.txt_cantidad_vender.TabIndex = 50;
-            // 
-            // bt_salir
-            // 
-            this.bt_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
-            this.bt_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_salir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.bt_salir.Image = global::Farmacia.Properties.Resources.cerrar_sesion;
-            this.bt_salir.Location = new System.Drawing.Point(420, 367);
-            this.bt_salir.Name = "bt_salir";
-            this.bt_salir.Size = new System.Drawing.Size(148, 44);
-            this.bt_salir.TabIndex = 51;
-            this.bt_salir.Text = "Salir ";
-            this.bt_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.bt_salir.UseVisualStyleBackColor = false;
-            // 
-            // bt_realizar_venta
-            // 
-            this.bt_realizar_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
-            this.bt_realizar_venta.Enabled = false;
-            this.bt_realizar_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_realizar_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.bt_realizar_venta.Image = global::Farmacia.Properties.Resources.carro;
-            this.bt_realizar_venta.Location = new System.Drawing.Point(241, 367);
-            this.bt_realizar_venta.Name = "bt_realizar_venta";
-            this.bt_realizar_venta.Size = new System.Drawing.Size(148, 44);
-            this.bt_realizar_venta.TabIndex = 39;
-            this.bt_realizar_venta.Text = "Realizar Venta";
-            this.bt_realizar_venta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.bt_realizar_venta.UseVisualStyleBackColor = false;
-            this.bt_realizar_venta.Click += new System.EventHandler(this.button1_Click);
-            // 
             // bt_calcular_venta
             // 
             this.bt_calcular_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(172)))), ((int)(((byte)(80)))));
@@ -387,6 +391,38 @@
             this.bt_calcular_venta.UseVisualStyleBackColor = false;
             this.bt_calcular_venta.Click += new System.EventHandler(this.bt_agregar_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label9.Location = new System.Drawing.Point(14, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(247, 27);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Venta de medicamento";
+            // 
+            // txt_sub_total
+            // 
+            this.txt_sub_total.Enabled = false;
+            this.txt_sub_total.Location = new System.Drawing.Point(434, 47);
+            this.txt_sub_total.Name = "txt_sub_total";
+            this.txt_sub_total.Size = new System.Drawing.Size(156, 20);
+            this.txt_sub_total.TabIndex = 54;
+            this.txt_sub_total.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label14.Location = new System.Drawing.Point(430, 24);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 20);
+            this.label14.TabIndex = 53;
+            this.label14.Text = "Sub Total:";
+            this.label14.Click += new System.EventHandler(this.label14_Click_1);
+            // 
             // ventana_ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,8 +432,8 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
             this.Name = "ventana_ventas";
-            this.Text = "ventana_ventas";
-            this.Load += new System.EventHandler(this.ventana_ventas_Load);
+            this.Text = "Ventas";
+            this.Load += new System.EventHandler(this.ventana_ventas_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad_vender)).EndInit();
@@ -428,7 +464,6 @@
         private System.Windows.Forms.TextBox txt_descuento;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button bt_realizar_venta;
-        private System.Windows.Forms.TextBox txt_iva;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txt_total_iva;
@@ -437,5 +472,8 @@
         private System.Windows.Forms.NumericUpDown txt_cantidad_vender;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button bt_salir;
+        private System.Windows.Forms.CheckBox check_iva;
+        private System.Windows.Forms.TextBox txt_sub_total;
+        private System.Windows.Forms.Label label14;
     }
 }

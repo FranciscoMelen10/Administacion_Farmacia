@@ -72,7 +72,7 @@ namespace Farmacia
                 }
 
             }
-                
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -92,7 +92,8 @@ namespace Farmacia
                 && txt_cantidad.Text == "" && txt_precio.Text == "" && txt_fecha.Text == "") //Comprueba que ningun campo este vacio
             {
                 MessageBox.Show("Llena los campos vacios");
-            } else
+            }
+            else
             {
 
                 if (controlador_medicamento()) //Este if sirve para comprobar si el usuario digito bien los datos a los text fields correspondientes
@@ -110,9 +111,9 @@ namespace Farmacia
                     tb_medicamentos.Rows[n].Cells[6].Value = 0;
                     limpiarCampos();
                 }
-                
+
             }
-            
+
         }
 
 
@@ -146,14 +147,14 @@ namespace Farmacia
             {
                 MessageBox.Show("Hubo un error de" + ex);
             }
-    
+
         }
 
         private void tb_medicamentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             n = e.RowIndex; //Asignarle el valor de la posicion en donde el usuario selecciono
 
-            if(n != -1)
+            if (n != -1)
             {
                 Console.WriteLine("Fila seleccionada:" + n);
                 DataGridViewCellCollection row = tb_medicamentos.Rows[n].Cells;
@@ -190,7 +191,8 @@ namespace Farmacia
                 //Comprueba si la cantidad es un entero
                 verificar_numero = int.TryParse(txt_cantidad.Text, out cantidad);
 
-                if (verificar_numero) {
+                if (verificar_numero)
+                {
 
                     //Reutilizamos la misma variable para confirmar si la variable es un número
                     verificar_numero = false;
@@ -230,9 +232,9 @@ namespace Farmacia
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un error de" +ex);
+                MessageBox.Show("Hubo un error de" + ex);
             }
-            
+
             return controlador;
 
         }
@@ -313,7 +315,7 @@ namespace Farmacia
             {
                 medi = new Medicamentos();
 
-                medi.Id = "M00"+(i+1);
+                medi.Id = "M00" + (i + 1);
                 medi.Nombre = nombre[i];
                 medi.Descripcion = descripcion[i];
                 medi.Cantidad = cantidad[i];
