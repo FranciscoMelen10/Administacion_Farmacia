@@ -16,6 +16,8 @@ namespace Farmacia
         public ventana_ventas(string id, string nombre, string descripcion, double precio, int cantidad, string fecha)
         {
             InitializeComponent();
+            double xd = precio;
+            Console.WriteLine(xd);
             txt_nombre.Text = nombre;
             txt_id.Text = id;
             txt_descripcion.Text = descripcion;
@@ -78,7 +80,7 @@ namespace Farmacia
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
         }
 
         private void bt_agregar_Click(object sender, EventArgs e)
@@ -159,33 +161,33 @@ namespace Farmacia
                             }
                             else
                             {
-                                MessageBox.Show("El descuento debe ser mayor o igual a 0 y menor o igual a 100");
+                                MessageBox.Show("El descuento debe ser mayor o igual a 0 y menor o igual a 100", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
 
                         }
 
                         else
                         {
-                            MessageBox.Show("La cantida a vender debe ser mayor a 0, vuelva a intentarlo");
+                            MessageBox.Show("La cantida a vender debe ser mayor a 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("El descuento que digito no es un numero valido, vuelva a intentarlo");
+                        MessageBox.Show("El descuento que digito no es un numero valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("La cantidad a vender debe ser menor o igual que cantidad incial");
+                    MessageBox.Show("La cantidad a vender debe ser menor o igual que la cantidad incial", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                MessageBox.Show("Llena los campos vacios");
+                MessageBox.Show("Llena los campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -214,6 +216,17 @@ namespace Farmacia
         private void bt_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public string[] pedirDatos() //Se usara en la ventana de ventana_farmacia para saber el id, cantidad vendida y el precio final
+        {
+            string[] lista = new string[3];
+            lista[0] = txt_id.Text;
+            lista[1] = string.Concat(txt_cantidad_vender.Value);
+            lista[2] = txt_total.Text;
+
+
+            return lista;
         }
     }
 }

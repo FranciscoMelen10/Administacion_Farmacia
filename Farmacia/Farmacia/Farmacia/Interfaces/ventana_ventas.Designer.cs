@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_sub_total = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.check_iva = new System.Windows.Forms.CheckBox();
             this.bt_salir = new System.Windows.Forms.Button();
             this.txt_cantidad_vender = new System.Windows.Forms.NumericUpDown();
@@ -57,14 +59,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.bt_calcular_venta = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.txt_sub_total = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad_vender)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.panel1.Controls.Add(this.txt_sub_total);
             this.panel1.Controls.Add(this.label14);
@@ -100,6 +103,29 @@
             this.panel1.Size = new System.Drawing.Size(605, 422);
             this.panel1.TabIndex = 1;
             // 
+            // txt_sub_total
+            // 
+            this.txt_sub_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_sub_total.Enabled = false;
+            this.txt_sub_total.Location = new System.Drawing.Point(434, 47);
+            this.txt_sub_total.Name = "txt_sub_total";
+            this.txt_sub_total.Size = new System.Drawing.Size(156, 20);
+            this.txt_sub_total.TabIndex = 54;
+            this.txt_sub_total.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label14.Location = new System.Drawing.Point(430, 24);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 20);
+            this.label14.TabIndex = 53;
+            this.label14.Text = "Sub Total:";
+            this.label14.Click += new System.EventHandler(this.label14_Click_1);
+            // 
             // check_iva
             // 
             this.check_iva.AutoSize = true;
@@ -114,6 +140,7 @@
             // 
             // bt_salir
             // 
+            this.bt_salir.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bt_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.bt_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_salir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
@@ -129,6 +156,8 @@
             // 
             // txt_cantidad_vender
             // 
+            this.txt_cantidad_vender.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_cantidad_vender.Location = new System.Drawing.Point(170, 248);
             this.txt_cantidad_vender.Maximum = new decimal(new int[] {
             1000000,
@@ -152,6 +181,7 @@
             // 
             // txt_total_iva
             // 
+            this.txt_total_iva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_total_iva.Enabled = false;
             this.txt_total_iva.Location = new System.Drawing.Point(434, 112);
             this.txt_total_iva.Name = "txt_total_iva";
@@ -161,6 +191,7 @@
             // 
             // txt_total_descuento
             // 
+            this.txt_total_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_total_descuento.Enabled = false;
             this.txt_total_descuento.Location = new System.Drawing.Point(434, 176);
             this.txt_total_descuento.Name = "txt_total_descuento";
@@ -169,6 +200,7 @@
             // 
             // txt_total
             // 
+            this.txt_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_total.Enabled = false;
             this.txt_total.Location = new System.Drawing.Point(434, 240);
             this.txt_total.Name = "txt_total";
@@ -177,6 +209,7 @@
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -189,6 +222,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -201,6 +235,8 @@
             // 
             // txt_descuento
             // 
+            this.txt_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_descuento.Location = new System.Drawing.Point(143, 322);
             this.txt_descuento.Name = "txt_descuento";
             this.txt_descuento.Size = new System.Drawing.Size(260, 20);
@@ -219,6 +255,7 @@
             // 
             // bt_realizar_venta
             // 
+            this.bt_realizar_venta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bt_realizar_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
             this.bt_realizar_venta.Enabled = false;
             this.bt_realizar_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,6 +272,8 @@
             // 
             // txt_fecha
             // 
+            this.txt_fecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_fecha.Enabled = false;
             this.txt_fecha.Location = new System.Drawing.Point(143, 208);
             this.txt_fecha.Name = "txt_fecha";
@@ -244,6 +283,8 @@
             // 
             // txt_precio
             // 
+            this.txt_precio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_precio.Enabled = false;
             this.txt_precio.Location = new System.Drawing.Point(143, 131);
             this.txt_precio.Name = "txt_precio";
@@ -253,6 +294,8 @@
             // 
             // txt_descripcion
             // 
+            this.txt_descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_descripcion.Enabled = false;
             this.txt_descripcion.Location = new System.Drawing.Point(143, 81);
             this.txt_descripcion.Name = "txt_descripcion";
@@ -263,6 +306,8 @@
             // 
             // txt_cantidad
             // 
+            this.txt_cantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_cantidad.Enabled = false;
             this.txt_cantidad.Location = new System.Drawing.Point(143, 167);
             this.txt_cantidad.Name = "txt_cantidad";
@@ -272,6 +317,8 @@
             // 
             // txt_nombre
             // 
+            this.txt_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_nombre.Enabled = false;
             this.txt_nombre.Location = new System.Drawing.Point(143, 46);
             this.txt_nombre.Name = "txt_nombre";
@@ -281,6 +328,8 @@
             // 
             // txt_id
             // 
+            this.txt_id.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_id.Enabled = false;
             this.txt_id.Location = new System.Drawing.Point(143, 11);
             this.txt_id.Name = "txt_id";
@@ -290,6 +339,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -378,6 +428,7 @@
             // 
             // bt_calcular_venta
             // 
+            this.bt_calcular_venta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bt_calcular_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(172)))), ((int)(((byte)(80)))));
             this.bt_calcular_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_calcular_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
@@ -401,27 +452,6 @@
             this.label9.Size = new System.Drawing.Size(247, 27);
             this.label9.TabIndex = 31;
             this.label9.Text = "Venta de medicamento";
-            // 
-            // txt_sub_total
-            // 
-            this.txt_sub_total.Enabled = false;
-            this.txt_sub_total.Location = new System.Drawing.Point(434, 47);
-            this.txt_sub_total.Name = "txt_sub_total";
-            this.txt_sub_total.Size = new System.Drawing.Size(156, 20);
-            this.txt_sub_total.TabIndex = 54;
-            this.txt_sub_total.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label14.Location = new System.Drawing.Point(430, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 20);
-            this.label14.TabIndex = 53;
-            this.label14.Text = "Sub Total:";
-            this.label14.Click += new System.EventHandler(this.label14_Click_1);
             // 
             // ventana_ventas
             // 

@@ -12,13 +12,14 @@ namespace Farmacia.Entidades
         private string fecha_ingreso;
         private double precio_unitario;
         private int cantidad;
+        private double precio_total;
 
         public Medicamentos() //Constructor vacio para instanciar a la clase sin necesidad de parsaele todos sus atributos por parametro
         {
         }
 
         //Constructor con todos sus atributos por parametro 
-        public Medicamentos(string id, string nombre, string descripcion, string fecha_ingreso, double precio_unitario, int cantidad)
+        public Medicamentos(string id, string nombre, string descripcion, string fecha_ingreso, double precio_unitario, int cantidad, double precio_total)
         {
             this.id = id;
             this.nombre = nombre;
@@ -26,6 +27,7 @@ namespace Farmacia.Entidades
             this.fecha_ingreso = fecha_ingreso;
             this.precio_unitario = precio_unitario;
             this.cantidad = cantidad;
+            this.precio_total = precio_total;
         }
 
         //Getter and Setters
@@ -77,7 +79,7 @@ namespace Farmacia.Entidades
             }
         }
 
-        public Double Precio_unitario
+        public double Precio_unitario
         {
             get
             {
@@ -98,6 +100,18 @@ namespace Farmacia.Entidades
             set
             {
                 cantidad = value;
+            }
+        }
+
+        public double Precio_total
+        {
+            get
+            {
+                return precio_total;
+            }
+            set
+            {
+                precio_total = value;
             }
         }
     }
