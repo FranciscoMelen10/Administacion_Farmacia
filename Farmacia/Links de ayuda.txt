@@ -14,11 +14,10 @@
 
 8) https://www.youtube.com/watch?v=SLrzQEqmsa4 (Pasar por parametro datos con variables a otra ventana)
 
+9) https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators#multiplication-operator- (Operaciones matemáticas en c# -> Multiplicación)
+
 
 Videos para entender mejor:
 
 1) Concepto de POO:
 - https://www.youtube.com/watch?v=I848HdWjLMo
-
-2) Concepto de cartirolina:
-- https://www.youtube.com/watch?v=iik25wqIuFo

@@ -16,8 +16,8 @@ namespace Farmacia
         public ventana_ventas(string id, string nombre, string descripcion, double precio, int cantidad, string fecha)
         {
             InitializeComponent();
-            double xd = precio;
-            Console.WriteLine(xd);
+
+            //Asignamos los valores del registro que seleccionamos 
             txt_nombre.Text = nombre;
             txt_id.Text = id;
             txt_descripcion.Text = descripcion;
@@ -152,8 +152,8 @@ namespace Farmacia
                                     txt_total_descuento.Text = descuento_total.ToString();
                                 }
 
-                                total_venta = total_venta + double.Parse(txt_total_descuento.Text); // Aplicamos el descuento al sub total
-                                total_venta = total_venta - double.Parse(txt_total_iva.Text); // Aplicamos el iva al sub total
+                                total_venta = total_venta - double.Parse(txt_total_descuento.Text); // Aplicamos el descuento al sub total
+                                total_venta = total_venta + double.Parse(txt_total_iva.Text); // Aplicamos el iva al sub total
 
                                 txt_total.Text = total_venta.ToString();
                                 bt_realizar_venta.Enabled = true;
