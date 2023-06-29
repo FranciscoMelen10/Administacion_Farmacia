@@ -60,8 +60,8 @@ namespace Farmacia
             try
             {
 
-                if (txt_id.Text == "" && txt_nombre.Text == "" && txt_descripcion.Text == ""
-                    && txt_cantidad.Text == "" && txt_precio.Text == "" && txt_fecha.Text == "") //Comprueba que ningun campo este vacio
+                if (txt_id.Text == "" || txt_nombre.Text == "" || txt_descripcion.Text == ""
+                    || txt_cantidad.Text == "" || txt_precio.Text == "" || txt_fecha.Text == "") //Comprueba que ningun campo este vacio
                 {
                     MessageBox.Show("Seleccione el registro que quiere realizar una venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -110,6 +110,7 @@ namespace Farmacia
         private void tabla_ventas() //Imprime los nuevos datos cuando se realiza una nueva venta
         {
             int n = 0;//Controlador de filas
+            limpiarCampos();
 
             foreach (Medicamentos me in medicamentos)
             {
@@ -137,8 +138,8 @@ namespace Farmacia
         private void button2_Click_1(object sender, EventArgs e) //Agregar un medicamento
         {
 
-            if (txt_id.Text == "" && txt_nombre.Text == "" && txt_descripcion.Text == ""
-                && txt_cantidad.Text == "" && txt_precio.Text == "" && txt_fecha.Text == "") //Comprueba que ningun campo este vacio
+            if (txt_id.Text == "" || txt_nombre.Text == "" || txt_descripcion.Text == ""
+                || txt_cantidad.Text == "" || txt_precio.Text == "" || txt_fecha.Text == "") //Comprueba que ningun campo este vacio
             {
                 MessageBox.Show("Llena los campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -188,8 +189,8 @@ namespace Farmacia
         {
             try
             {
-                if (txt_id.Text == "" && txt_nombre.Text == "" && txt_descripcion.Text == ""
-              && txt_cantidad.Text == "" && txt_precio.Text == "" && txt_fecha.Text == "") //Comprueba que ningun campo este vacio
+                if (txt_id.Text == "" || txt_nombre.Text == "" || txt_descripcion.Text == ""
+              || txt_cantidad.Text == "" || txt_precio.Text == "" || txt_fecha.Text == "") //Comprueba que ningun campo este vacio
                 {
                     MessageBox.Show("Llena los campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -279,7 +280,7 @@ namespace Farmacia
                     {
                         if (cantidad >= 0)
                         {
-                            if (precio >= 0)
+                            if (precio > 0)
                             {
                                 controlador = true; // Como el controlador esta en verdadero, entonces todos los datos que digito el usuario son correctos y podra agregar ese medicamento a la tabla
                             }
@@ -446,5 +447,9 @@ namespace Farmacia
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

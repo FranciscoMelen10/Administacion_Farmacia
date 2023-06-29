@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Farmacia",
-    "\\Farmacia\\Farmacia"
+    "\\Farmacia\\Farmacia",
+    "\\Farmacia\\Farmacia\\Interfaces"
   ],
-  "SelectedNode": "\\Farmacia\\Farmacia\\ventana_principal.resx",
+  "SelectedNode": "\\Farmacia\\Farmacia\\Interfaces\\ventana_ventas.cs",
   "PreviewInSolutionExplorer": false
 }
