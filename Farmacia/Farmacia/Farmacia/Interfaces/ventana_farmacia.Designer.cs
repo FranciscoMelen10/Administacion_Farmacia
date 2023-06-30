@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.bt_eliminar = new System.Windows.Forms.Button();
             this.txt_fecha = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,6 +66,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.bt_eliminar);
             this.panel1.Controls.Add(this.txt_fecha);
             this.panel1.Controls.Add(this.label7);
@@ -83,8 +85,23 @@
             this.panel1.Controls.Add(this.bt_venta);
             this.panel1.Location = new System.Drawing.Point(17, 92);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 224);
+            this.panel1.Size = new System.Drawing.Size(846, 237);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
+            this.button1.Image = global::Farmacia.Properties.Resources.carro;
+            this.button1.Location = new System.Drawing.Point(705, 51);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 42);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Agregar medicamentos";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // bt_eliminar
             // 
@@ -92,9 +109,9 @@
             this.bt_eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
             this.bt_eliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
             this.bt_eliminar.Image = global::Farmacia.Properties.Resources.trash;
-            this.bt_eliminar.Location = new System.Drawing.Point(717, 117);
+            this.bt_eliminar.Location = new System.Drawing.Point(705, 146);
             this.bt_eliminar.Name = "bt_eliminar";
-            this.bt_eliminar.Size = new System.Drawing.Size(126, 49);
+            this.bt_eliminar.Size = new System.Drawing.Size(129, 40);
             this.bt_eliminar.TabIndex = 27;
             this.bt_eliminar.Text = "Eliminar";
             this.bt_eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -137,9 +154,9 @@
             this.bt_clean.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
             this.bt_clean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
             this.bt_clean.Image = global::Farmacia.Properties.Resources.clear;
-            this.bt_clean.Location = new System.Drawing.Point(717, 172);
+            this.bt_clean.Location = new System.Drawing.Point(705, 193);
             this.bt_clean.Name = "bt_clean";
-            this.bt_clean.Size = new System.Drawing.Size(126, 47);
+            this.bt_clean.Size = new System.Drawing.Size(129, 41);
             this.bt_clean.TabIndex = 23;
             this.bt_clean.Text = "Vaciar campos";
             this.bt_clean.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -247,9 +264,9 @@
             this.bt_agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
             this.bt_agregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
             this.bt_agregar.Image = global::Farmacia.Properties.Resources.save2;
-            this.bt_agregar.Location = new System.Drawing.Point(717, 9);
+            this.bt_agregar.Location = new System.Drawing.Point(705, 3);
             this.bt_agregar.Name = "bt_agregar";
-            this.bt_agregar.Size = new System.Drawing.Size(126, 46);
+            this.bt_agregar.Size = new System.Drawing.Size(129, 42);
             this.bt_agregar.TabIndex = 11;
             this.bt_agregar.Text = "Agregar nuevo medicamento";
             this.bt_agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -263,9 +280,9 @@
             this.bt_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
             this.bt_venta.Image = global::Farmacia.Properties.Resources.cuenta_bancaria;
             this.bt_venta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bt_venta.Location = new System.Drawing.Point(717, 61);
+            this.bt_venta.Location = new System.Drawing.Point(705, 99);
             this.bt_venta.Name = "bt_venta";
-            this.bt_venta.Size = new System.Drawing.Size(126, 48);
+            this.bt_venta.Size = new System.Drawing.Size(129, 41);
             this.bt_venta.TabIndex = 9;
             this.bt_venta.Text = "Agregar venta";
             this.bt_venta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -369,6 +386,7 @@
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "ventana_farmacia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administracion de Farmacia";
             this.Load += new System.EventHandler(this.ventana_farmacia_Load);
             this.panel1.ResumeLayout(false);
@@ -409,5 +427,6 @@
         private System.Windows.Forms.TextBox txt_fecha;
         private System.Windows.Forms.Button bt_eliminar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

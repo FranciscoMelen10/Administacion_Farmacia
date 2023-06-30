@@ -462,6 +462,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
             this.Name = "ventana_ventas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas";
             this.Load += new System.EventHandler(this.ventana_ventas_Load_1);
             this.panel1.ResumeLayout(false);

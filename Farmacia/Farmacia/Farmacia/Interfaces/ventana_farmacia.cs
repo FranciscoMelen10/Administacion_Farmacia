@@ -76,18 +76,25 @@ namespace Farmacia
 
                         string[] lista;
 
-                        lista = formulario_ventas.pedirDatos(); //Retorna el id, venta final y la cantidad que se vendio
+                        lista = formulario_ventas.pedirDatos(); //Retorna el id, la cantidad que se vendio y la venta final 
 
-                        foreach (Medicamentos me in medicamentos)
+
+                        if (int.Parse(lista[1]) != 0)
                         {
-                            if (me.Id == lista[0])
+                            MessageBox.Show("Se ha vendido el total de " + lista[2] + "C$ del medicamento " + (txt_nombre.Text), "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information); //Mensaje en pantalla
+
+                            foreach (Medicamentos me in medicamentos)
                             {
-                                me.Cantidad -= int.Parse(lista[1]);
-                                me.Precio_total += double.Parse(lista[2]);
+                                if (me.Id == lista[0])
+                                {
+                                    me.Cantidad -= int.Parse(lista[1]);
+                                    me.Precio_total += double.Parse(lista[2]);
+                                }
                             }
+
+                            tabla_ventas();
                         }
 
-                        tabla_ventas();
                     }
 
                 }
@@ -98,8 +105,56 @@ namespace Farmacia
                 Console.WriteLine(ex.ToString());
             }
 
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (txt_id.Text == "" || txt_nombre.Text == "" || txt_descripcion.Text == ""
+                    || txt_cantidad.Text == "" || txt_precio.Text == "" || txt_fecha.Text == "") //Comprueba que ningun campo este vacio
+                {
+                    MessageBox.Show("Seleccione el medicamento para agregar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (controlador_medicamento())
+                    {
+                        ventana_agregar formulario_agregar = new ventana_agregar(txt_id.Text, txt_nombre.Text,
+                        txt_descripcion.Text, double.Parse(txt_precio.Text), int.Parse(txt_cantidad.Text), txt_fecha.Text); //Pasar por parametro los datos seleccionados para poder hacer la venta 
+
+                        formulario_agregar.ShowDialog();
+
+                        string[] lista;
+
+                        lista = formulario_agregar.pedirDatos(); //Retorna el id y la cantidad que se agrego
+
+                        if (int.Parse(lista[1]) != 0)
+                        {
+                            MessageBox.Show("Se han guardado la cantidad de " + lista[1] + " medicamentos de " + (txt_nombre.Text), "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information); //Mensaje en pantalla
 
 
+                            foreach (Medicamentos me in medicamentos)
+                            {
+                                if (me.Id == lista[0])
+                                {
+                                    me.Cantidad += int.Parse(lista[1]);
+                                }
+                            }
+
+                            tabla_ventas();
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -114,10 +169,6 @@ namespace Farmacia
 
             foreach (Medicamentos me in medicamentos)
             {
-                //Console.WriteLine(me.Id);
-                //Console.WriteLine(me.Nombre);
-                //Console.WriteLine(me.Precio_total);
-
                 tb_medicamentos.Rows[n].Cells[0].Value = me.Id;
                 tb_medicamentos.Rows[n].Cells[1].Value = me.Nombre;
                 tb_medicamentos.Rows[n].Cells[2].Value = me.Descripcion;
@@ -239,7 +290,7 @@ namespace Farmacia
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error en cllick de la tabla");
+                Console.WriteLine("Error en cllick de la tabla " + ex);
             }
 
         }
@@ -451,5 +502,7 @@ namespace Farmacia
         {
 
         }
+
+
     }
 }

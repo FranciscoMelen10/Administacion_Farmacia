@@ -216,6 +216,13 @@ namespace Farmacia
         private void bt_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+            txt_nombre.Text = "";
+            txt_id.Text = "";
+            txt_descripcion.Text = "";
+            txt_cantidad.Text = "";
+            txt_precio.Text = "";
+            txt_fecha.Text = "";
+            txt_cantidad_vender.Value = 0;
         }
 
         public string[] pedirDatos() //Se usara en la ventana de ventana_farmacia para saber el id, cantidad vendida y el precio final

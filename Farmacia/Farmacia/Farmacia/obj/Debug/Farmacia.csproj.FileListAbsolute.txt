@@ -21,3 +21,4 @@ D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\o
 D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\obj\Debug\Farmacia.exe
 D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\obj\Debug\Farmacia.pdb
 D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\obj\Debug\Farmacia.ventana_ventas.resources
+D:\PROGRAMACION\Repositorios\Administacion_Farmacia\Farmacia\Farmacia\Farmacia\obj\Debug\Farmacia.ventana_agregar.resources
