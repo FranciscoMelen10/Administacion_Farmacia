@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventana_ventas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_sub_total = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -461,6 +462,7 @@
             this.ClientSize = new System.Drawing.Size(641, 486);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ventana_ventas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas";

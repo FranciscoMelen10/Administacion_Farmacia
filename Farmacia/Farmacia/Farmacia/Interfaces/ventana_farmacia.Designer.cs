@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventana_farmacia));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.bt_eliminar = new System.Windows.Forms.Button();
@@ -55,10 +56,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_medicamentos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,9 +82,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.bt_agregar);
             this.panel1.Controls.Add(this.bt_venta);
-            this.panel1.Location = new System.Drawing.Point(17, 92);
+            this.panel1.Location = new System.Drawing.Point(17, 48);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 237);
+            this.panel1.Size = new System.Drawing.Size(846, 270);
             this.panel1.TabIndex = 0;
             // 
             // button1
@@ -94,9 +93,9 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
             this.button1.Image = global::Farmacia.Properties.Resources.carro;
-            this.button1.Location = new System.Drawing.Point(705, 51);
+            this.button1.Location = new System.Drawing.Point(705, 73);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 42);
+            this.button1.Size = new System.Drawing.Size(129, 43);
             this.button1.TabIndex = 28;
             this.button1.Text = "Agregar medicamentos";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -109,7 +108,7 @@
             this.bt_eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
             this.bt_eliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
             this.bt_eliminar.Image = global::Farmacia.Properties.Resources.trash;
-            this.bt_eliminar.Location = new System.Drawing.Point(705, 146);
+            this.bt_eliminar.Location = new System.Drawing.Point(705, 171);
             this.bt_eliminar.Name = "bt_eliminar";
             this.bt_eliminar.Size = new System.Drawing.Size(129, 40);
             this.bt_eliminar.TabIndex = 27;
@@ -122,7 +121,7 @@
             // 
             this.txt_fecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_fecha.Location = new System.Drawing.Point(472, 157);
+            this.txt_fecha.Location = new System.Drawing.Point(472, 171);
             this.txt_fecha.Name = "txt_fecha";
             this.txt_fecha.Size = new System.Drawing.Size(196, 20);
             this.txt_fecha.TabIndex = 26;
@@ -133,7 +132,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label7.Location = new System.Drawing.Point(336, 153);
+            this.label7.Location = new System.Drawing.Point(336, 167);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 20);
             this.label7.TabIndex = 25;
@@ -143,7 +142,7 @@
             // 
             this.txt_precio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_precio.Location = new System.Drawing.Point(472, 90);
+            this.txt_precio.Location = new System.Drawing.Point(472, 99);
             this.txt_precio.Name = "txt_precio";
             this.txt_precio.Size = new System.Drawing.Size(196, 20);
             this.txt_precio.TabIndex = 24;
@@ -154,9 +153,9 @@
             this.bt_clean.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
             this.bt_clean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
             this.bt_clean.Image = global::Farmacia.Properties.Resources.clear;
-            this.bt_clean.Location = new System.Drawing.Point(705, 193);
+            this.bt_clean.Location = new System.Drawing.Point(705, 217);
             this.bt_clean.Name = "bt_clean";
-            this.bt_clean.Size = new System.Drawing.Size(129, 41);
+            this.bt_clean.Size = new System.Drawing.Size(129, 44);
             this.bt_clean.TabIndex = 23;
             this.bt_clean.Text = "Vaciar campos";
             this.bt_clean.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -167,9 +166,9 @@
             // 
             this.txt_descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_descripcion.Location = new System.Drawing.Point(113, 153);
+            this.txt_descripcion.Location = new System.Drawing.Point(113, 169);
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(202, 54);
+            this.txt_descripcion.Size = new System.Drawing.Size(202, 65);
             this.txt_descripcion.TabIndex = 22;
             this.txt_descripcion.Text = "";
             // 
@@ -177,7 +176,7 @@
             // 
             this.txt_cantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_cantidad.Location = new System.Drawing.Point(472, 31);
+            this.txt_cantidad.Location = new System.Drawing.Point(472, 25);
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(196, 20);
             this.txt_cantidad.TabIndex = 21;
@@ -186,7 +185,7 @@
             // 
             this.txt_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_nombre.Location = new System.Drawing.Point(113, 92);
+            this.txt_nombre.Location = new System.Drawing.Point(113, 101);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(202, 20);
             this.txt_nombre.TabIndex = 20;
@@ -197,7 +196,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label5.Location = new System.Drawing.Point(336, 90);
+            this.label5.Location = new System.Drawing.Point(336, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(122, 20);
             this.label5.TabIndex = 18;
@@ -208,7 +207,7 @@
             // 
             this.txt_id.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_id.Location = new System.Drawing.Point(113, 35);
+            this.txt_id.Location = new System.Drawing.Point(113, 29);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(202, 20);
             this.txt_id.TabIndex = 17;
@@ -219,7 +218,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label6.Location = new System.Drawing.Point(336, 33);
+            this.label6.Location = new System.Drawing.Point(336, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 20);
             this.label6.TabIndex = 16;
@@ -230,18 +229,19 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label4.Location = new System.Drawing.Point(3, 159);
+            this.label4.Location = new System.Drawing.Point(3, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 20);
             this.label4.TabIndex = 14;
             this.label4.Text = "Descripcion:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label3.Location = new System.Drawing.Point(3, 90);
+            this.label3.Location = new System.Drawing.Point(3, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 20);
             this.label3.TabIndex = 13;
@@ -252,7 +252,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label2.Location = new System.Drawing.Point(3, 33);
+            this.label2.Location = new System.Drawing.Point(3, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 20);
             this.label2.TabIndex = 12;
@@ -264,9 +264,9 @@
             this.bt_agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(204)))), ((int)(((byte)(197)))));
             this.bt_agregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
             this.bt_agregar.Image = global::Farmacia.Properties.Resources.save2;
-            this.bt_agregar.Location = new System.Drawing.Point(705, 3);
+            this.bt_agregar.Location = new System.Drawing.Point(705, 20);
             this.bt_agregar.Name = "bt_agregar";
-            this.bt_agregar.Size = new System.Drawing.Size(129, 42);
+            this.bt_agregar.Size = new System.Drawing.Size(129, 47);
             this.bt_agregar.TabIndex = 11;
             this.bt_agregar.Text = "Agregar nuevo medicamento";
             this.bt_agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -280,9 +280,9 @@
             this.bt_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
             this.bt_venta.Image = global::Farmacia.Properties.Resources.cuenta_bancaria;
             this.bt_venta.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bt_venta.Location = new System.Drawing.Point(705, 99);
+            this.bt_venta.Location = new System.Drawing.Point(705, 122);
             this.bt_venta.Name = "bt_venta";
-            this.bt_venta.Size = new System.Drawing.Size(129, 41);
+            this.bt_venta.Size = new System.Drawing.Size(129, 43);
             this.bt_venta.TabIndex = 9;
             this.bt_venta.Text = "Agregar venta";
             this.bt_venta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -294,7 +294,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(351, 27);
             this.label1.TabIndex = 10;
@@ -364,27 +364,17 @@
             this.Column7.HeaderText = "Ventas del medicamento";
             this.Column7.Name = "Column7";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Farmacia.Properties.Resources.Logo_Farmacia;
-            this.pictureBox1.Location = new System.Drawing.Point(369, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // ventana_farmacia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_medicamentos);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ventana_farmacia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administracion de Farmacia";
@@ -392,7 +382,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_medicamentos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,7 +415,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_fecha;
         private System.Windows.Forms.Button bt_eliminar;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
     }
 }

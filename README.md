@@ -16,8 +16,8 @@ La creación de una interfaz de usuario agradable y adaptable al tamaño de la p
 ### 2)Ventana de ventas
 <p align="center"><img src= './Farmacia/Recursos/Ventana de las ventas.jpeg' width=80%; align="center"></p>
 
-### 3)Ambas vetanas
-<p align="center"><img src= './Farmacia/Recursos/Dos formularios.jpeg' width=80%; align="center"></p>
+### 3)Ventana para agregar medicamentos
+<p align="center"><img src= './Farmacia/Recursos/Ventana para agregar medicamentos.jpeg' width=80%; align="center"></p>
 
 ## Creador del proyecto:
 #### Tutor del proyecto: Francisco De Jesús Meléndez Simplina
