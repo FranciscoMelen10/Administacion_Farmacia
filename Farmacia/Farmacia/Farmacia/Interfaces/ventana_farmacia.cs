@@ -199,36 +199,47 @@ namespace Farmacia
 
                 if (controlador_medicamento()) //Este if sirve para comprobar si el usuario digito bien los datos a los text fields correspondientes
                 {
-                    MessageBox.Show("Se guardo con exito el medicamento " + (txt_nombre.Text), "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information); //Mensaje en pantalla
 
-                    int n = tb_medicamentos.Rows.Add(); //Fila que selecciono el usuario en la tabla de medicamentos
-
-                    tb_medicamentos.Rows[n].Cells[0].Value = txt_id.Text;
-                    tb_medicamentos.Rows[n].Cells[1].Value = txt_nombre.Text;
-                    tb_medicamentos.Rows[n].Cells[2].Value = txt_descripcion.Text;
-                    tb_medicamentos.Rows[n].Cells[3].Value = txt_cantidad.Text;
-                    tb_medicamentos.Rows[n].Cells[4].Value = txt_precio.Text;
-                    tb_medicamentos.Rows[n].Cells[5].Value = txt_fecha.Text;
-                    tb_medicamentos.Rows[n].Cells[6].Value = 0;
-
-                    medi = new Medicamentos();
-
-                    medi.Id = txt_id.Text;
-                    medi.Nombre = txt_nombre.Text;
-                    medi.Descripcion = txt_descripcion.Text;
-                    medi.Cantidad = int.Parse(txt_cantidad.Text);
-                    medi.Precio_unitario = double.Parse(txt_precio.Text);
-                    medi.Fecha_ingreso = txt_fecha.Text;
-                    medi.Precio_total = 0;
-
-                    medicamentos.Add(medi);
-
-                    foreach (Medicamentos me in medicamentos)
+                    if (existeMedicamento())
                     {
-                        Console.WriteLine(me.Nombre);
+                        MessageBox.Show("Se guardo con exito el medicamento " + (txt_nombre.Text), "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information); //Mensaje en pantalla
+
+                        int n = tb_medicamentos.Rows.Add(); //Fila que selecciono el usuario en la tabla de medicamentos
+
+                        tb_medicamentos.Rows[n].Cells[0].Value = txt_id.Text;
+                        tb_medicamentos.Rows[n].Cells[1].Value = txt_nombre.Text;
+                        tb_medicamentos.Rows[n].Cells[2].Value = txt_descripcion.Text;
+                        tb_medicamentos.Rows[n].Cells[3].Value = txt_cantidad.Text;
+                        tb_medicamentos.Rows[n].Cells[4].Value = txt_precio.Text;
+                        tb_medicamentos.Rows[n].Cells[5].Value = txt_fecha.Text;
+                        tb_medicamentos.Rows[n].Cells[6].Value = 0;
+
+                        medi = new Medicamentos();
+
+                        medi.Id = txt_id.Text;
+                        medi.Nombre = txt_nombre.Text;
+                        medi.Descripcion = txt_descripcion.Text;
+                        medi.Cantidad = int.Parse(txt_cantidad.Text);
+                        medi.Precio_unitario = double.Parse(txt_precio.Text);
+                        medi.Fecha_ingreso = txt_fecha.Text;
+                        medi.Precio_total = 0;
+
+                        medicamentos.Add(medi);
+
+                        foreach (Medicamentos me in medicamentos)
+                        {
+                            Console.WriteLine(me.Nombre);
+
+                        }
+                        limpiarCampos();
 
                     }
-                    limpiarCampos();
+                    else
+                    {
+                        MessageBox.Show("El registro que digito existe, digite otro nombre y ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
                 }
 
             }
@@ -250,6 +261,20 @@ namespace Farmacia
                     if (n != -1)
                     {
                         MessageBox.Show("Se elimino el medicamento: " + txt_nombre.Text, "Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        int posicion = 0; // Buscara la posicion donde se encuentre el registro repetido
+                        foreach (Medicamentos me in medicamentos)
+                        {
+                            if (txt_id.Text == me.Id)
+                            {
+                                MessageBox.Show("Numero del registro: " + posicion);
+                                break;
+                            }
+                            posicion++;
+                        }
+
+                        medicamentos.RemoveAt(posicion);
+
                         tb_medicamentos.Rows.RemoveAt(n); //En la fila seleccionada por el usuario, la elimina completamente
                         n = 0; //Se asigna en 0 para que el usuario pueda elegir nuevamente otro registro de la tabla
                         limpiarCampos();
@@ -496,6 +521,21 @@ namespace Farmacia
 
             }
 
+        }
+
+        private bool existeMedicamento()
+        {
+            bool existe = true; // Buscara entre los registros guardados si hay un registro repetido
+            foreach (Medicamentos me in medicamentos)
+            {
+                if (txt_id.Text == me.Id || txt_nombre.Text == me.Nombre)
+                {
+                    existe = false;
+                    break;
+                }
+            }
+
+            return existe;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
