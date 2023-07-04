@@ -16,8 +16,14 @@
 
 9) https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/arithmetic-operators#multiplication-operator- (Operaciones matemáticas en c# -> Multiplicación)
 
+10) https://www.youtube.com/watch?v=xiLWH23T_ZM
+
 
 Videos para entender mejor:
 
 1) Concepto de POO:
 - https://www.youtube.com/watch?v=I848HdWjLMo
+
+- https://www.facebook.com/reel/1219510315413893?s=yWDuG2&fs=e&mibextid=Nif5oz
+
+- https://www.facebook.com/reel/812987103670843?s=yWDuG2&fs=e&mibextid=Nif5oz

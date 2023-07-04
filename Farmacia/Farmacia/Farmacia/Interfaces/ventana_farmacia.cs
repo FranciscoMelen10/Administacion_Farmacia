@@ -296,27 +296,6 @@ namespace Farmacia
 
         private void tb_medicamentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                n = e.RowIndex; //Asignarle el valor de la posicion en donde el usuario selecciono
-
-                if (n != -1)
-                {
-                    Console.WriteLine("Fila seleccionada:" + n);
-                    DataGridViewCellCollection row = tb_medicamentos.Rows[n].Cells;
-
-                    txt_id.Text = Convert.ToString(row[0].Value);
-                    txt_nombre.Text = Convert.ToString(row[1].Value);
-                    txt_descripcion.Text = Convert.ToString(row[2].Value);
-                    txt_cantidad.Text = Convert.ToString(row[3].Value);
-                    txt_precio.Text = Convert.ToString(row[4].Value);
-                    txt_fecha.Text = Convert.ToString(row[5].Value);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error en cllick de la tabla " + ex);
-            }
 
         }
 
@@ -545,6 +524,34 @@ namespace Farmacia
 
         private void label4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void tb_medicamentos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                n = e.RowIndex; //Asignarle el valor de la posicion en donde el usuario selecciono
+
+                if (n != -1)
+                {
+                    Console.WriteLine("Fila seleccionada:" + n);
+
+
+                    // Asignar los valores de la fila a los TextBoxes
+                    txt_id.Text = Convert.ToString(tb_medicamentos.Rows[n].Cells[0].Value);
+                    txt_nombre.Text = Convert.ToString(tb_medicamentos.Rows[n].Cells[1].Value);
+                    txt_descripcion.Text = Convert.ToString(tb_medicamentos.Rows[n].Cells[2].Value);
+                    txt_cantidad.Text = Convert.ToString(tb_medicamentos.Rows[n].Cells[3].Value);
+                    txt_precio.Text = Convert.ToString(tb_medicamentos.Rows[n].Cells[4].Value);
+                    txt_fecha.Text = Convert.ToString(tb_medicamentos.Rows[n].Cells[5].Value);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error en cllick de la tabla " + ex);
+            }
 
         }
     }
