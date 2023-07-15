@@ -3,7 +3,7 @@
 
 El proyecto de administración o simulación de una farmacia en C# tiene como objetivo ofrecer una solución eficiente para el manejo de inventario, ventas y gestión de medicamentos en una farmacia, sin usar una base de datos. Utilizando el lenguaje de programación C#, se puede desarrollar un sistema que permita al usuario realizar operaciones como leer, agregar y eliminar medicamentos al inventario. El proyecto incluirá funciones para calcular el total de ventas, aplicar descuentos y calcular el IVA. 
 
-El proyecto de ejemplo diseñado para estudiantes de segundo año de la Universidad de Nicaragua UNICIT tiene como objetivo brindarles una comprensión práctica de los conceptos fundamentales de programación. Mediante la implementación de un programa en C#, se les mostrará cómo crear una aplicación básica que aborde aspectos como la interfaz de usuario, la manipulación de datos y algunas operaciones del crud operaciones CRUD (Crear, Leer y Eliminar). Este proyecto se centrará en explicar los principios básicos de la programación orientada a objetos.
+El proyecto se realizó como una práctica para recordar conceptos fundamentales de programación. Mediante la implementación de un programa en C#, se mostrará cómo crear una aplicación básica que aborde aspectos como la interfaz de usuario, la manipulación de datos y algunas operaciones del crud operaciones CRUD (Crear, Leer y Eliminar). Este proyecto se centrará en explicar los principios básicos de la programación orientada a objetos.
 
 ## Diseño de la interfaz
 
@@ -19,7 +19,10 @@ La creación de una interfaz de usuario agradable y adaptable al tamaño de la p
 ### 3)Ventana para agregar medicamentos
 <p align="center"><img src= './Farmacia/Recursos/Ventana para agregar medicamentos.jpeg' width=80%; align="center"></p>
 
-## Creador del proyecto:
-#### Tutor del proyecto: Francisco De Jesús Meléndez Simplina
-#### Fecha: 26/6/2023
-#### Trabajo para: Estudiantes de la universidad de la UNICIT con explicación del proyecto para su la clase de Programación II
+## Datos del proyecto:
+- Tutor del proyecto: Francisco De Jesús Meléndez Simplina
+- Fecha: 26/6/2023
+
+### Tecnologías:
+- C#
+- Visual Studios
