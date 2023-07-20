@@ -3,7 +3,7 @@
 
 El proyecto de administración o simulación de una farmacia en C# tiene como objetivo ofrecer una solución eficiente para el manejo de inventario, ventas y gestión de medicamentos en una farmacia, sin usar una base de datos. Utilizando el lenguaje de programación C#, se puede desarrollar un sistema que permita al usuario realizar operaciones como leer, agregar y eliminar medicamentos al inventario. El proyecto incluirá funciones para calcular el total de ventas, aplicar descuentos y calcular el IVA. 
 
-El proyecto se realizó como una práctica para recordar conceptos fundamentales de programación. Mediante la implementación de un programa en C#, se mostrará cómo crear una aplicación básica que aborde aspectos como la interfaz de usuario, la manipulación de datos y algunas operaciones del crud operaciones CRUD (Crear, Leer y Eliminar). Este proyecto se centrará en explicar los principios básicos de la programación orientada a objetos.
+El proyecto se realizó como una práctica para recordar conceptos fundamentales de programación. Mediante la implementación de un programa en C#, se mostrará cómo crear una aplicación básica que aborde aspectos como la interfaz de usuario, la manipulación de datos y algunas operaciones del CRUD (Crear, Leer y Eliminar). Este proyecto se centrará en explicar los principios básicos de la programación orientada a objetos.
 
 ## Diseño de la interfaz
 
